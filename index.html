@@ -1,11 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-HK">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="shortcut icon" href="./assets/images/favicon.png" type="image/x-icon">
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+  <link rel="stylesheet" href="./assets/css/fe_main.css">
   <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-  <script src="./assets/js/script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+  <script src="./assets/js/fe_main.js"></script>
   <title>SPACO</title>
 </head>
 
@@ -23,24 +26,25 @@
       </div>
       <ul class="sp-nav-menu-body">
         <li>
-          <a href="location-all.html">All locations</a>
+          <a href="location-all-party-room.html">派對專區</a>
           <ul class="sp-nav-location-list">
-            <li><a href="location-wan-chai.html">Wan Chai</a></li>
-            <li><a href="location-causeway-bay.html">Causeway Bay</a></li>
-            <li><a href="location-lux-central.html">LUX Central</a></li>
+            <li><a href="location-wan-chai.html">灣仔店</a></li>
+            <li><a href="location-causeway-bay.html">銅鑼灣店</a></li>
+            <li><a href="location-lux-central.html">LUX中環店</a></li>
+            <li><a href="location-tsim-sha-tsui.html">尖沙咀店</a></li>
           </ul>
         </li>
-        <li><a href="about.html">About SPACO</a></li>
-        <li><a href="promotions.html">Lastest Promotions</a></li>
-        <li><a href="services.html">Other Services</a></li>
-        <li><a href="pricelist.html">Pricelist</a></li>
-        <li><a href="gallery.html">Gallery</a></li>
-        <li><a href="faq.html">FAQ</a></li>
-        <li><a href="contact-us.html">Contact Us</a></li>
+        <li><a href="about-us.html">關於我們</a></li>
+        <li><a href="promotions.html">最新優惠</a></li>
+        <li><a href="services.html">額外服務</a></li>
+        <li><a href="pricelist.html">價目表</a></li>
+        <li><a href="gallery.html">相片集</a></li>
+        <li><a href="faq.html">客人須知</a></li>
+        <li><a href="contact-us.html">聯絡我們</a></li>
         <li><hr></li>
         <li class="sp-nav-two-buttons">
-          <a href="login.html">Login</a>
-          <a href="booking.html">Book Now</a>
+          <a href="login.html">登入</a>
+          <a href="booking.html">預約</a>
         </li>
         <li><span class="whatsapp-number"><img src="./assets/icons/icon_whatsapp_white.svg">+852 9282 3060</span></li>
       </ul>
@@ -48,145 +52,86 @@
   </nav>
   <nav class="pc-nav pc-only">
     <ul>
-      <li><a href="about.html">About SPACO</a></li>
+      <li><a href="about-us.html">關於我們</a></li>
       <li>|</li>
-      <li><a href="promotions.html">Lastest Promotions</a></li>
-      <li><a href="services.html">Other Services</a></li>
-      <li><a href="pricelist.html">Pricelist</a></li>
-      <li><a href="gallery.html">Gallery</a></li>
-      <li><a href="faq.html">FAQ</a></li>
+      <li><a href="promotions.html">最新優惠</a></li>
+      <li><a href="services.html">額外服務</a></li>
+      <li><a href="pricelist.html">價目表</a></li>
+      <li><a href="gallery.html">相片集</a></li>
+      <li><a href="faq.html">客人須知</a></li>
       <li>|</li>
-      <li><a href="contact-us.html">Contact Us</a></li>
+      <li><a href="contact-us.html">聯絡我們</a></li>
       <li><a href="login.html"><img src="./assets/icons/icon_user_white.svg"></a></li>
     </ul>
   </nav>
 </header>
 
-<aside class="cta-bar">
-  <ul class="cta-locations">
-    <li><a href="location-all.html">All Locations</a></li>
-    <li><a href="location-wan-chai.html">Wan Chai</a></li>
-    <li><a href="location-causeway-bay.html">Causeway Bay</a></li>
-    <li><a href="location-lux-central.html">LUX Central</a></li>
-  </ul>
-  <div class="cta-booking">
-    <span class="whatsapp-number"><img src="./assets/icons/icon_whatsapp_black.svg">+852 9282 3060</span>
-    <a href="booking.html" class="btn btn-green">Book Now</a>
-  </div>
-</aside>
+<main>
 
-<section class="hero">
-  <img src="./assets/images/hero.jpg" class="hero-img">
-  <div class="hero-inset">
-    <h1>
-      Spaco is Esperanto,<br>
-      meaning Space
-    </h1>
-    <p>
-      In a prosperous city,<br>
-      "Space"<br>
-      becomes a luxury goods<br>
-      Spaco is a multifunctional private space<br>
-      Cozy and warm atmosphere<br>
-      Provide one more breathing space to your life
-    </p>
-  </div>
-</section>
+  <aside class="cta-bar">
+    <ul class="cta-locations">
+      <li><a href="location-all-party-room.html">派對專區</a></li>
+      <li><a href="location-wan-chai.html">灣仔店</a></li>
+      <li><a href="location-causeway-bay.html">銅鑼灣店</a></li>
+      <li><a href="location-lux-central.html">LUX中環店</a></li>
+      <li><a href="location-tsim-sha-tsui.html">尖沙咀店</a></li>
+    </ul>
+    <div class="cta-booking">
+      <span class="whatsapp-number"><img src="./assets/icons/icon_whatsapp_black.svg">+852 9282 3060</span>
+      <a href="booking.html" class="btn btn-green">預約</a>
+    </div>
+  </aside>
 
-<main class="homepage-main">
+  <section class="hero">
+    <img src="./assets/images/hero.jpg" class="hero-img">
+    <div class="hero-inset">
+      <h1>
+        <small>Spaco是世界語</small>
+        意解空間
+      </h1>
+      <p>
+        Spaco是一個適合各種用途的私人空間<br>
+        舒適溫馨的氛圍<br>
+        為您的生活<br>
+        提供多一個喘息的空間
+      </p>
+    </div>
+  </section>
 
   <div class="location-grid">
-    <div class="location-grid-item reversed">
-      <img src="./assets/images/eyecatch_1.jpg" class="location-grid-item-eyecatch">
-      <div class="location-grid-item-body">
-        <img src="./assets/icons/icon_pin_black.svg" class="icon-pin">
-        <h2>Wan Chai</h2>
-        <p>700 sqft With Terrace</p>
-        <a href="location-wan-chai.html" class="btn btn-green">Show Detail</a>
+    <div class="location-grid-item">
+      <img src="./assets/icons/icon_pin_black.svg" class="icon-pin">
+      <h2>灣仔店</h2>
+      <p>900呎複式單位</p>
+      <a href="location-wan-chai.html" class="btn btn-green">了解更多</a>
+    </div>
+    <div class="location-grid-item">
+      <img src="./assets/icons/icon_pin_black.svg" class="icon-pin">
+      <h2>銅鑼灣店</h2>
+      <p>700呎空間連露台</p>
+      <a href="location-causeway-bay.html" class="btn btn-green">了解更多</a>
+    </div>
+    <div class="location-grid-item">
+      <img src="./assets/icons/icon_pin_black.svg" class="icon-pin">
+      <h2>LUX中環店</h2>
+      <p>600呎空間</p>
+      <a href="location-lux-central.html" class="btn btn-green">了解更多</a>
+    </div>
+    <div class="pc-only">
+      <div class="location-grid-item">
+        <h2>Spaco是世界語，意解空間</h2>
+        <p>Spaco是一個適合各種用途的私人空間<br>舒適溫馨的氛圍<br>為您的生活<br>提供多一個喘息的空間</p>
       </div>
     </div>
     <div class="location-grid-item">
-      <img src="./assets/images/eyecatch_2.jpg" class="location-grid-item-eyecatch">
-      <div class="location-grid-item-body">
-        <img src="./assets/icons/icon_pin_black.svg" class="icon-pin">
-        <h2>Causeway Bay</h2>
-        <p>700 sqft With Terrace</p>
-        <a href="location-causeway-bay.html" class="btn btn-green">Show Detail</a>
-      </div>
+      <img src="./assets/icons/icon_pin_black.svg" class="icon-pin">
+      <h2>尖沙咀店</h2>
+      <p>1200呎複式單位連露台</p>
+      <a href="location-tsim-sha-tsui.html" class="btn btn-green">了解更多</a>
     </div>
-    <div class="location-grid-item reversed">
-      <img src="./assets/images/eyecatch_3.jpg" class="location-grid-item-eyecatch">
-      <div class="location-grid-item-body">
-        <img src="./assets/icons/icon_pin_black.svg" class="icon-pin">
-        <h2>LUX Central</h2>
-        <p>600 sqft With Terrace</p>
-        <a href="location-lux-central.html" class="btn btn-green">Show Detail</a>
-      </div>
+    <div class="location-grid-decor pc-only">
+      <img src="./assets/images/location-grid-decor.jpg">
     </div>
-  </div>
-
-  <div class="location-cardslider-wrapper">
-    <h2>Locations</h2>
-    <div class="location-cardslider slider">
-      <a href="location-wan-chai.html" class="location-cardslider-item slider-item">
-        <img src="./assets/images/eyecatch_4.jpg" class="location-cardslider-item-eyecatch">
-        <div class="location-cardslider-item-fixed">700 sqft</div>
-        <div class="location-cardslider-item-body">
-          <h3>Wan Chai</h3>
-          <p>700 sqft With Terrace</p>
-          <h4>Capacity:</h4>
-          <p>Minimum 6 ppl</p>
-          <h4>Highlight Facilities:</h4>
-          <ul>
-            <li>Poker table with chips</li>
-            <li>Mahjong</li>
-            <li>Speaker with microphones</li>
-            <li>Switch: Overcooked 2 / Mario Party / Mario Kart / Moving Out etc.</li>
-            <li>BBQ</li>
-            <li>Shisha</li>
-          </ul>
-        </div>
-      </a>
-      <a href="location-causeway-bay.html" class="location-cardslider-item slider-item">
-        <img src="./assets/images/eyecatch_5.jpg" class="location-cardslider-item-eyecatch">
-        <div class="location-cardslider-item-fixed">700 sqft</div>
-        <div class="location-cardslider-item-body">
-          <h3>Causeway Bay</h3>
-          <p>700 sqft With Terrace</p>
-          <h4>Capacity:</h4>
-          <p>Minimum 6 ppl</p>
-          <h4>Highlight Facilities:</h4>
-          <ul>
-            <li>Poker table with chips</li>
-            <li>Mahjong</li>
-            <li>Speaker with microphones</li>
-            <li>Switch: Overcooked 2 / Mario Party / Mario Kart / Moving Out etc.</li>
-            <li>BBQ</li>
-            <li>Shisha</li>
-          </ul>
-        </div>
-      </a>
-      <a href="location-lux-central.html" class="location-cardslider-item slider-item">
-        <img src="./assets/images/eyecatch_6.jpg" class="location-cardslider-item-eyecatch">
-        <div class="location-cardslider-item-fixed">600 sqft</div>
-        <div class="location-cardslider-item-body">
-          <h3>LUX Central</h3>
-          <p>600 sqft With Terrace</p>
-          <h4>Capacity:</h4>
-          <p>Minimum 6 ppl</p>
-          <h4>Highlight Facilities:</h4>
-          <ul>
-            <li>Poker table with chips</li>
-            <li>Mahjong</li>
-            <li>Speaker with microphones</li>
-            <li>Switch: Overcooked 2 / Mario Party / Mario Kart / Moving Out etc.</li>
-            <li>BBQ</li>
-            <li>Shisha</li>
-          </ul>
-        </div>
-      </a>
-    </div>
-    <a href="location-all.html" class="link-green">Show all locations</a>
   </div>
 
 </main>
@@ -194,7 +139,7 @@
 <footer>
   <div class="footer-backtotop">
     <button type="button" class="footer-backtotop-button">
-      Back to the top
+      返回頁頂
       <svg width="15" height="16" viewBox="0 0 15 16" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M1.5 7L7.5 1L13.5 7M7.5 1V15" stroke="currentcolor" />
       </svg>
@@ -203,19 +148,18 @@
   <div class="footer-body">
     <div class="footer-top">
       <div class="footer-contact">
-        <h2>Contact Us</h2>
+        <h2>聯絡我們</h2>
         <p>
           WhatsApp: +852 9282 3060<br>
-          Email: spacohk@gmail.com<br>
-          Booking & Enquiry: 10:00am – 11:00pm
+          電郵: spacohk@gmail.com<br>
+          預約及查詢: 10:00am – 11:00pm
         </p>
       </div>
       <div class="footer-address">
-        <h2>Address</h2>
+        <h2>地址</h2>
         <p>
-          Wan Chai, Hong Kong<br>
-          (By Reservation Only)<br>
-          Open hours : 09:00am – 02:00am
+          灣仔 (僅限預訂)<br>
+          辦公時間: 09:00am – 02:00am
         </p>
       </div>
     </div>
@@ -227,7 +171,7 @@
         <li><a href="#"><img src="./assets/icons/icon_google_white.svg"></a></li>
         <li><a href="#"><img src="./assets/icons/icon_twitter_white.svg"></a></li>
       </ul>
-      <span class="footer-copyright">Copyright @ Spaco</span>
+      <span class="footer-copyright">Copyright © Spaco</span>
     </div>
   </div>
 </footer>

@@ -9,7 +9,7 @@
   <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
   <script src="./assets/js/fe_main.js"></script>
-  <title>相片集 | SPACO</title>
+  <title>尖沙咀店 | SPACO</title>
 </head>
 
 
@@ -74,7 +74,7 @@
       <li><a href="location-wan-chai.html">灣仔店</a></li>
       <li><a href="location-causeway-bay.html">銅鑼灣店</a></li>
       <li><a href="location-lux-central.html">LUX中環店</a></li>
-      <li><a href="location-tsim-sha-tsui.html">尖沙咀店</a></li>
+      <li><a href="location-tsim-sha-tsui.html" class="active">尖沙咀店</a></li>
     </ul>
     <div class="cta-booking">
       <span class="whatsapp-number"><img src="./assets/icons/icon_whatsapp_black.svg">+852 9282 3060</span>
@@ -83,78 +83,165 @@
   </aside>
 
   <hgroup class="main-heading-group">
-    <h1>相片集</h1>
+    <h1>尖沙咀店</h1>
     <p>一個滿足您所有要求的空間</p>
   </hgroup>
+
+  <div class="location-data-wrapper">
+    <div class="location-data">
+      <div>
+        <h2>空間:</h2>
+        <p>1200呎複式單位連露台</p>
+      </div>
+      <div>
+        <h2>容納人數:</h2>
+        <p>6人</p>
+      </div>
+      <div>
+        <h2>價格:</h2>
+        <p><strong>$50起</strong></p>
+      </div>
+      <a href="booking.html" class="btn btn-lg btn-green">預約</a>
+    </div>
+  </div>
+
+  <div class="facility-twocol-wrapper">
+    <div class="facility-twocol twocol">
+      <div class="facility-twocol-body">
+        <h2>場地設施</h2>
+        <ul>
+          <li>啤牌枱連籌碼</li>
+          <li>自動麻雀機</li>
+          <li>音響設備連無線咪</li>
+          <li>Switch: Overcooked 2 / Mario Party Superstars / Mario Kart Deluxe 8 / Moving Out / Mario Strikers Battle League / Super Mario Bros Deluxe / Super Kirby Clash / Bubble Bubble 4 / Moto Rush GT / Over Watch 2 / Splatoon 3 / Fall Guys / APEX Legends / Ninjala / Asphalt Legends / Brawlhalla</li>
+        </ul>
+      </div>
+      <img src="./assets/images/location_1.jpg" class="facility-twocol-photo">
+    </div>
+    <div class="facility-twocol twocol reversed">
+      <div class="facility-twocol-body">
+        <h2>場地設施</h2>
+        <ul>
+          <li>啤牌枱連籌碼</li>
+          <li>自動麻雀機</li>
+          <li>音響設備連無線咪</li>
+          <li>Switch: Overcooked 2 / Mario Party Superstars / Mario Kart Deluxe 8 / Moving Out / Mario Strikers Battle League / Super Mario Bros Deluxe / Super Kirby Clash / Bubble Bubble 4 / Moto Rush GT / Over Watch 2 / Splatoon 3 / Fall Guys / APEX Legends / Ninjala / Asphalt Legends / Brawlhalla</li>
+        </ul>
+      </div>
+      <img src="./assets/images/location_2.jpg" class="facility-twocol-photo">
+    </div>
+    <div class="facility-twocol twocol">
+      <div class="facility-twocol-body">
+        <h2>場地設施</h2>
+        <ul>
+          <li>啤牌枱連籌碼</li>
+          <li>自動麻雀機</li>
+          <li>音響設備連無線咪</li>
+          <li>Switch: Overcooked 2 / Mario Party Superstars / Mario Kart Deluxe 8 / Moving Out / Mario Strikers Battle League / Super Mario Bros Deluxe / Super Kirby Clash / Bubble Bubble 4 / Moto Rush GT / Over Watch 2 / Splatoon 3 / Fall Guys / APEX Legends / Ninjala / Asphalt Legends / Brawlhalla</li>
+        </ul>
+      </div>
+      <img src="./assets/images/location_3.jpg" class="facility-twocol-photo">
+    </div>
+  </div>
 
   <div class="slick-wrapper">
     <div class="slick-header">
       <h2>相片集</h2>
       <div class="slick-filter-wrapper">
-        <button type="button" class="slick-filter-button" data-for="pgrid" data-filter-keyword="wan-chai">灣仔店</button>
-        <button type="button" class="slick-filter-button" data-for="pgrid" data-filter-keyword="causeway-bay">銅鑼灣店</button>
-        <button type="button" class="slick-filter-button" data-for="pgrid" data-filter-keyword="lux-central">LUX中環店</button>
-        <button type="button" class="slick-filter-button" data-for="pgrid" data-filter-keyword="tsim-sha-tsui">尖沙咀店</button>
+        <button type="button" class="slick-filter-button" data-for="slider" data-filter-keyword="overview">場地總覽</button>
+        <button type="button" class="slick-filter-button" data-for="slider" data-filter-keyword="interior">內部裝修</button>
+        <button type="button" class="slick-filter-button" data-for="slider" data-filter-keyword="food-and-drinks">提供飲食</button>
       </div>
-      <form action="javascript:void(0)" class="slick-search-form" data-for="pgrid">
-        <input type="search" placeholder="關鍵字" name="slick-search" id="slick-search">
-        <input type="submit" value="搜索" class="btn btn-green">
-      </form>
     </div>
-    <ul class="pgrid-slick">
-      <li class="slick-item" data-filter-keywords="wan-chai">
+    <ul class="slider-slick">
+      <li class="slick-item" data-filter-keywords="overview">
         <figure class="gallery-image">
           <img src="./assets/images/location_1.jpg">
           <figcaption>大廳</figcaption>
         </figure>
       </li>
-      <li class="slick-item" data-filter-keywords="causeway-bay">
+      <li class="slick-item" data-filter-keywords="overview">
         <figure class="gallery-image">
           <img src="./assets/images/location_2.jpg">
           <figcaption>大廳</figcaption>
         </figure>
       </li>
-      <li class="slick-item" data-filter-keywords="lux-central">
+      <li class="slick-item" data-filter-keywords="interior">
         <figure class="gallery-image">
           <img src="./assets/images/location_3.jpg">
           <figcaption>大廳</figcaption>
         </figure>
       </li>
-      <li class="slick-item" data-filter-keywords="wan-chai">
-        <figure class="gallery-image">
-          <img src="./assets/images/location_2.jpg">
-          <figcaption>大廳</figcaption>
-        </figure>
-      </li>
-      <li class="slick-item" data-filter-keywords="causeway-bay">
-        <figure class="gallery-image">
-          <img src="./assets/images/location_3.jpg">
-          <figcaption>大廳</figcaption>
-        </figure>
-      </li>
-      <li class="slick-item" data-filter-keywords="lux-central">
+      <li class="slick-item" data-filter-keywords="interior">
         <figure class="gallery-image">
           <img src="./assets/images/location_1.jpg">
           <figcaption>大廳</figcaption>
         </figure>
       </li>
-      <li class="slick-item" data-filter-keywords="wan-chai">
+      <li class="slick-item" data-filter-keywords="food-and-drinks">
+        <figure class="gallery-image">
+          <img src="./assets/images/location_2.jpg">
+          <figcaption>大廳</figcaption>
+        </figure>
+      </li>
+      <li class="slick-item" data-filter-keywords="food-and-drinks">
         <figure class="gallery-image">
           <img src="./assets/images/location_3.jpg">
           <figcaption>大廳</figcaption>
         </figure>
       </li>
-      <li class="slick-item" data-filter-keywords="causeway-bay">
-        <figure class="gallery-image">
-          <img src="./assets/images/location_1.jpg">
-          <figcaption>大廳</figcaption>
-        </figure>
+    </ul>
+  </div>
+
+  <div class="slick-wrapper">
+    <div class="slick-header">
+      <h2>額外服務</h2>
+    </div>
+    <ul class="slider-slick">
+      <li class="slick-item">
+        <div class="package-details">
+          <img src="./assets/images/package_1.jpg">
+          <h3>Shisha Package</h3>
+          <ul>
+            <li>歡迎WHATSAPP查詢</li>
+            <li>最少1日前預訂</li>
+          </ul>
+        </div>
       </li>
-      <li class="slick-item" data-filter-keywords="lux-central">
-        <figure class="gallery-image">
-          <img src="./assets/images/location_2.jpg">
-          <figcaption>大廳</figcaption>
-        </figure>
+      <li class="slick-item">
+        <div class="package-details">
+          <img src="./assets/images/package_2.jpg">
+          <h3>火鍋 Package</h3>
+          <ul>
+            <li>歡迎WHATSAPP查詢</li>
+            <li>最少8人起，星期一至日同價。</li>
+          </ul>
+        </div>
+      </li>
+      <li class="slick-item">
+        <div class="package-details">
+          <img src="./assets/images/package_3.jpg">
+          <h3>BBQ 燒烤 Package</h3>
+          <ul>
+            <li>經典燒烤餐</li>
+            <li>海鮮燒烤餐</li>
+            <li>歡迎WHATSAPP查詢</li>
+            <li>最少8人起，星期一至日同價。</li>
+          </ul>
+        </div>
+      </li>
+      <li class="slick-item">
+        <div class="package-details">
+          <img src="./assets/images/package_4.jpg">
+          <h3>代訂大閘蟹</h3>
+          <p>預訂場地即可代訂大閘蟹!</p>
+          <p>免收加工費!場地提供廚房自行加工</p>
+          <ul>
+            <li>最少10隻起，及需4天前預訂。</li>
+            <li>已提供所有食蟹用具、薑茶</li>
+            <li>​合作商戶 : 永豐大閘蟹專家 @wingfungfoodhk</li>
+          </ul>
+        </div>
       </li>
     </ul>
   </div>

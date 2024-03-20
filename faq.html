@@ -1,12 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-HK">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="shortcut icon" href="./assets/images/favicon.png" type="image/x-icon">
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+  <link rel="stylesheet" href="./assets/css/fe_main.css">
   <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-  <script src="./assets/js/script.js"></script>
-  <title>FAQ | SPACO</title>
+  <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+  <script src="./assets/js/fe_main.js"></script>
+  <title>客人須知 | SPACO</title>
 </head>
 
 
@@ -23,24 +26,25 @@
       </div>
       <ul class="sp-nav-menu-body">
         <li>
-          <a href="location-all.html">All locations</a>
+          <a href="location-all-party-room.html">派對專區</a>
           <ul class="sp-nav-location-list">
-            <li><a href="location-wan-chai.html">Wan Chai</a></li>
-            <li><a href="location-causeway-bay.html">Causeway Bay</a></li>
-            <li><a href="location-lux-central.html">LUX Central</a></li>
+            <li><a href="location-wan-chai.html">灣仔店</a></li>
+            <li><a href="location-causeway-bay.html">銅鑼灣店</a></li>
+            <li><a href="location-lux-central.html">LUX中環店</a></li>
+            <li><a href="location-tsim-sha-tsui.html">尖沙咀店</a></li>
           </ul>
         </li>
-        <li><a href="about.html">About SPACO</a></li>
-        <li><a href="promotions.html">Lastest Promotions</a></li>
-        <li><a href="services.html">Other Services</a></li>
-        <li><a href="pricelist.html">Pricelist</a></li>
-        <li><a href="gallery.html">Gallery</a></li>
-        <li><a href="faq.html">FAQ</a></li>
-        <li><a href="contact-us.html">Contact Us</a></li>
+        <li><a href="about-us.html">關於我們</a></li>
+        <li><a href="promotions.html">最新優惠</a></li>
+        <li><a href="services.html">額外服務</a></li>
+        <li><a href="pricelist.html">價目表</a></li>
+        <li><a href="gallery.html">相片集</a></li>
+        <li><a href="faq.html">客人須知</a></li>
+        <li><a href="contact-us.html">聯絡我們</a></li>
         <li><hr></li>
         <li class="sp-nav-two-buttons">
-          <a href="login.html">Login</a>
-          <a href="booking.html">Book Now</a>
+          <a href="login.html">登入</a>
+          <a href="booking.html">預約</a>
         </li>
         <li><span class="whatsapp-number"><img src="./assets/icons/icon_whatsapp_white.svg">+852 9282 3060</span></li>
       </ul>
@@ -48,15 +52,15 @@
   </nav>
   <nav class="pc-nav pc-only">
     <ul>
-      <li><a href="about.html">About SPACO</a></li>
+      <li><a href="about-us.html">關於我們</a></li>
       <li>|</li>
-      <li><a href="promotions.html">Lastest Promotions</a></li>
-      <li><a href="services.html">Other Services</a></li>
-      <li><a href="pricelist.html">Pricelist</a></li>
-      <li><a href="gallery.html">Gallery</a></li>
-      <li><a href="faq.html">FAQ</a></li>
+      <li><a href="promotions.html">最新優惠</a></li>
+      <li><a href="services.html">額外服務</a></li>
+      <li><a href="pricelist.html">價目表</a></li>
+      <li><a href="gallery.html">相片集</a></li>
+      <li><a href="faq.html">客人須知</a></li>
       <li>|</li>
-      <li><a href="contact-us.html">Contact Us</a></li>
+      <li><a href="contact-us.html">聯絡我們</a></li>
       <li><a href="login.html"><img src="./assets/icons/icon_user_white.svg"></a></li>
     </ul>
   </nav>
@@ -66,107 +70,117 @@
 
   <aside class="cta-bar">
     <ul class="cta-locations">
-      <li><a href="location-all.html">All Locations</a></li>
-      <li><a href="location-wan-chai.html">Wan Chai</a></li>
-      <li><a href="location-causeway-bay.html">Causeway Bay</a></li>
-      <li><a href="location-lux-central.html">LUX Central</a></li>
+      <li><a href="location-all-party-room.html">派對專區</a></li>
+      <li><a href="location-wan-chai.html">灣仔店</a></li>
+      <li><a href="location-causeway-bay.html">銅鑼灣店</a></li>
+      <li><a href="location-lux-central.html">LUX中環店</a></li>
+      <li><a href="location-tsim-sha-tsui.html">尖沙咀店</a></li>
     </ul>
     <div class="cta-booking">
       <span class="whatsapp-number"><img src="./assets/icons/icon_whatsapp_black.svg">+852 9282 3060</span>
-      <a href="booking.html" class="btn btn-green">Book Now</a>
+      <a href="booking.html" class="btn btn-green">預約</a>
     </div>
   </aside>
 
   <hgroup class="main-heading-group">
-    <h1>Guest Notice</h1>
-    <p>Need To Know</p>
+    <h1>客人須知</h1>
+    <p>一個滿足您所有要求的空間</p>
   </hgroup>
 
   <div class="faq-wrapper">
-    <details>
-      <summary>Booking Process</summary>
+    <details class="faq-item">
+      <summary>預約流程</summary>
       <div>
         <ol>
-          <li>Request booking date, timeslot, quantity of person, event purpose via WhatsApp.</li>
-          <li>We will send you order details with total amount + $1000 deposit and payment requests after received your information. (If the total amount is over $4000, +$2000 deposit is needed.)</li>
-          <li>We can accept bank transfer / FPS. Please send us the payment record as confirmation.</li>
-          <li>We will send you booking confirmation message after received your payment. Booking Successful!</li>
+          <li>於WhatsApp查詢想預約日期、時段、人數、活動性質。</li>
+          <li>收到資料後，我們會向客人發出訂單總額+$1000按金付款請求。<br>（如訂單總額高於$4000， 需付$2000按金）</li>
+          <li>款項可接受銀行轉帳、FPS，請傳回付款記錄給我們作確認。</li>
+          <li>收妥費用後，我們會傳送預約確認信息，完成預約。</li>
         </ol>
       </div>
     </details>
-    <details>
-      <summary>Notes for Appointment</summary>
+    <details class="faq-item">
+      <summary>預約須知</summary>
       <div>
         <ul>
-          <li>There is no verbal reservation for the venue, and the reservation must be based on the submission of proof of payment and confirmation of receipt of the payment.</li>
-          <li>Please pay within 24 hours after the order is sent. Failure to pay the amount on time will be regarded as abandoning the appointment.</li>
-          <li>We hopes to provide you with a comfortable space, so there is no staff stay in the venue, guidelines for the use of venue will be provided. Since this venue is fully self-service, the full amount must be paid at the time of booking. Thank you for your understanding.</li>
-          <li>If the number of people on the day increases, you need to pay the extra fee per head, and all admissions will be charged uniformly regardless of the length of stay. The payment will be collected on the same day or deducted from the deposit.</li>
-          <li>If the number of people on the day decreases, the amount of people booked at the time of booking must be paid, and there is no refund. It is recommended to make an appointment to determine the number of people who will attend the event.</li>
-          <li>Guests are requested to arrive at the venue on time, no extra time will be set for late arrivals under any circumstances. If you are late for more than 60 minutes and do not notify us via WhatsApp / phone, the appointment will be automatically cancelled, and the entire amount will be confiscated and no refund will be provided.</li>
+          <li>場地不設口頭預留，預約需以提交付款證明，確認收取款項為準。</li>
+          <li>請於訂單發出後24小時內支付款項，如未能如時支付訂金將被視為放棄預約處理。</li>
+          <li>本店希望能提供自在舒適的空間予閣下，因此不設有職員在場，場內會提供各項物品使用指南及指引。由於本場地採取全自助形式，因此需於預訂時付清全數金額，多謝體諒。</li>
+          <li>如當日人數增加，可以補付人頭收費，所有入場者不論逗留時間長短，一律均一收費。款項會於當天收取或於按金內扣款。</li>
+          <li>如當日人數減少亦需支付預約時所預訂的人數金額，不設退還。建議以確定會出席活動的人數預約。</li>
+          <li>客人請準時到達場地，任何情況下遲到均不設補時。如遲到超過60分鐘並沒有透過Whatsapp/電話通知我們，預約將作自動取消論，並沒收全數款項，不設退還。</li></ul>
         </ul>
       </div>
     </details>
-    <details>
-      <summary>Deposit Arrangement</summary>
+    <details class="faq-item">
+      <summary>按金安排</summary>
       <div>
-        <p><strong>The deposit is not calculated in the venue rental fee.</strong></p>
+        <p><strong>按金不計算於場地租用收費內</strong></p>
         <ul>
-          <li>The deposit is to ensure that the users of the venue cherish the venue items and keep the venue clean.</li>
-          <li>You are welcome to bring your own drinks and food, and restore the venue before finishing. (For Central: corkage fee $500 is needed if you bring your own drinks.)</li>
-          <li>If you've use any tablewares, please wash them before leave.</li>
-          <li>If there is any damage, didn't close electrical appliances before leave, make the venue too dirty such as spilled drinks, vomit, and food waste, Spaco reserves the right to deduct the deposit as a service fee / compensation fee. (Reference as below) - Didn't close oven : $2000 - Didn't close air-conditioner : $800 - Didn't close lights or other electrical appliances: $500 - Didn't wash used tablewares: $500 - Cleanning fee if too dirty :$800 - Compensation fee depends on the item's value if any damage made.</li>
-          <li>If the equipment is severely damaged, the site loss shall be compensated according to the price.</li>
-          <li>It takes time to check the venue, and the company promises that if there is no such situation, it will be refunded in full by transfer / FPS within 24 hours after leaving the venue.</li>
+          <li>按金是為了確保使用場地者愛惜場地物品及保持場地清潔。</li>
+          <li>歡迎自攜飲品及食物，並於完場前還原場地整理乾淨。<br>〈中環店：如自攜酒水，需付$500開瓶費〉</li>
+          <li>如有使用場地提供之餐具/爐具，請於完場前清洗乾淨。</li>
+          <li>如有任何損毀/離場前沒有關閉所有電器及燈/髒亂如打翻飲料、嘔吐物、食物殘渣四散等，Spaco有權扣除按金作服務費/賠償費用。（費用參考如下）<br>
+            <ul>
+              <li>沒有關閉焗爐 : $2000</li>
+              <li>沒有關閉冷氣 : $800</li>
+              <li>沒有關閉電燈或其他電器 : $500</li>
+              <li>沒有清洗已使用的餐具/爐具 : $500</li>
+              <li>場地髒亂清潔費 :$800</li>
+              <li>其他損毀按物品價值賠償</li>
+            </ul>
+          </li>
+          <li>如設備嚴重受損則需照價賠償場地損失。</li>
+          <li>檢收場地需時，本公司承諾如無以上情況會於退場後24小時以轉賬/FPS方式全數退還。</li>
         </ul>
       </div>
     </details>
-    <details>
-      <summary>Cancellation and Change of Appointment</summary>
+    <details class="faq-item">
+      <summary>預約取消與更改</summary>
       <div>
         <ul>
-          <li>If you decide to cancel / change one week before the original appointment date, you can refund half of the amount / change the appointment date once for free (Can only choose a day within two weeks after the original date).</li>
-          <li>If you change from weekdays to weekends, you will be charged at the weekend rate; if you change from weekends to weekdays, you will also be charged for the weekend rate. Everything is subject to the higher price.</li>
-          <li>If the party is temporarily cancelled or the change cannot be notified on time, the funds will not be refunded.</li>
-          <li>For all cancellations or changes, please contact us on WhatsApp / Signal.</li>
+          <li>如於原定預約日一星期前決定取消/更改，可退還半數款項/免費更改預約日期一次。<br>（只限原定日期後兩星期內之日子）</li>
+          <li>如由平日改至周末，需按周末價錢收費 ; 如由周末改至平日，亦需照付周末價錢。 一切以價高者為準。</li>
+          <li>如臨時取消聚會或無法準時通知更改，款項將不會退回。</li>
+          <li>所有取消或更改，請於Whatsapp/Signal與我們聯絡。</li>
         </ul>
       </div>
     </details>
-    <details>
-      <summary>Black Rain Warning / Special Arrangement for Gale Signal No. 8</summary>
+    <details class="faq-item">
+      <summary>黑雨警告/八號烈風信號特別安排</summary>
       <div>
         <ul>
-          <li>All appointments within the affected period can be postponed once, and you can choose a day within 7 days from the original date.</li>
-          <li>We will re-open within 1 hour after the signal drops. If there are special requirements, we may try to postpone it as the case may be.</li>
-          <li>If the customer chooses to proceed as scheduled, he shall bear his own risk and cannot temporarily cancel / change it afterwards. In this case, all funds will be confiscated and no refund will be provided.</li>
-          <li>Spaco reserves the right of final decision on rescheduling arrangements.</li>
+          <li>所有受影響時段內之預約皆可延期一次，可選擇原定日期起計7日內的日子。</li>
+          <li>我們並會於訊號除下後1小時重開，如有特別要求，我們可視乎情況嘗試安排順延。</li>
+          <li>如客戶選擇如期進行，需自行承擔風險，其後不可臨時取消/更改。在此情況下，款項將全數沒收，不設退還。</li>
+          <li>spaco 保留有關改期安排的最終決定權。</li>
         </ul>
       </div>
     </details>
-    <details>
-      <summary>CCTV & Recording</summary>
+    <details class="faq-item">
+      <summary>閉路電視及錄影</summary>
       <div>
-        <p><strong>Do not cut off the power of the CCTV or cover the lens in any form without authorization.</strong></p>
-        <p>The venue is equipped with CCTV and video recording. If any person does not abide by the rules of the venue or commits dangerous or illegal acts, or we believe that the situation is special, we reserve the right to refuse such persons to enter or request them to leave the venue with no refund and compensation.</p>
+        <p><strong>禁止擅自截斷閉路電視電源或用任何形式遮蔽鏡頭。</strong></p>
+        <p>場地設有閉路電視及錄影，如任何人士不遵守場地規則或作出危險、違法行為，或我們認為情況特殊，為保障安全或秩序，我們保留權利拒絕該等人士進入，或要求該等人士離開場地而毋須退款或作出任何賠償。</p>
       </div>
     </details>
-    <details>
-      <summary>Self-decoration</summary>
+    <details class="faq-item">
+      <summary>自行佈置</summary>
       <div>
         <ul>
-          <li>You may decorate venue by your own. However, do not damage any facilities and walls. Otherwise, we will claim the compensation with you.</li>
-          <li>If you want to paste any decoration on the wall, please paste the masking tape on the wall first.</li>
+          <li>客人可自行佈置場地，惟不能損毀場地設施及牆壁，否則需照價賠償。</li>
+          <li>如需粘貼任何佈置於牆壁上，請先於牆壁上貼上皺紋膠紙。</li>
         </ul>
       </div>
     </details>
-    <details>
-      <summary>Other</summary>
+    <details class="faq-item">
+      <summary>其他</summary>
       <div>
         <ul>
-          <li>The venue is designed to cater to different customers. The internal equipment is not suitable for children. Parents or guardians are kindly requested to pay attention.</li>
-          <li>The venue does not accept pets, thank you for your understanding.</li>
-          <li>The venue would not take any responsiblities if there are any accident or loss of property.</li>
-          <li>spaco reserves the right to change the above terms. In case of any dispute, spaco reserves the right to make the final decision on the dispute and any issues related to these terms.</li>
+          <li>場地為迎合不同客戶而設，場內部份設備不適合幼兒使用，請家長或監護人敬請留意。</li>
+          <li>場地恕不招待寵物，敬請見諒。</li>
+          <li>場內發生任何意外或財物損失與本公司無關。</li>
+          <li>spaco保留更改以上條款之權利。如有任何爭議，spaco保留就爭議及與此等條款有關的任何問題之最終決定權。</li>
         </ul>
       </div>
     </details>
@@ -177,7 +191,7 @@
 <footer>
   <div class="footer-backtotop">
     <button type="button" class="footer-backtotop-button">
-      Back to the top
+      返回頁頂
       <svg width="15" height="16" viewBox="0 0 15 16" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M1.5 7L7.5 1L13.5 7M7.5 1V15" stroke="currentcolor" />
       </svg>
@@ -186,19 +200,19 @@
   <div class="footer-body">
     <div class="footer-top">
       <div class="footer-contact">
-        <h2>Contact Us</h2>
+        <h2>聯絡我們</h2>
         <p>
           WhatsApp: +852 9282 3060<br>
-          Email: spacohk@gmail.com<br>
-          Booking & Enquiry: 10:00am – 11:00pm
+          電郵: spacohk@gmail.com<br>
+          預約及查詢: 10:00am – 11:00pm
         </p>
       </div>
       <div class="footer-address">
-        <h2>Address</h2>
+        <h2>地址</h2>
         <p>
-          Wan Chai, Hong Kong<br>
-          (By Reservation Only)<br>
-          Open hours : 09:00am – 02:00am
+          灣仔<br>
+          (僅限預訂)<br>
+          辦公時間: 09:00am – 02:00am
         </p>
       </div>
     </div>
@@ -210,7 +224,7 @@
         <li><a href="#"><img src="./assets/icons/icon_google_white.svg"></a></li>
         <li><a href="#"><img src="./assets/icons/icon_twitter_white.svg"></a></li>
       </ul>
-      <span class="footer-copyright">Copyright @ Spaco</span>
+      <span class="footer-copyright">Copyright © Spaco</span>
     </div>
   </div>
 </footer>

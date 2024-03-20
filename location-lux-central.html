@@ -1,12 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-HK">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="shortcut icon" href="./assets/images/favicon.png" type="image/x-icon">
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+  <link rel="stylesheet" href="./assets/css/fe_main.css">
   <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-  <script src="./assets/js/script.js"></script>
-  <title>LUX Central | SPACO</title>
+  <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+  <script src="./assets/js/fe_main.js"></script>
+  <title>LUX中環店 | SPACO</title>
 </head>
 
 
@@ -23,24 +26,25 @@
       </div>
       <ul class="sp-nav-menu-body">
         <li>
-          <a href="location-all.html">All locations</a>
+          <a href="location-all-party-room.html">派對專區</a>
           <ul class="sp-nav-location-list">
-            <li><a href="location-wan-chai.html">Wan Chai</a></li>
-            <li><a href="location-causeway-bay.html">Causeway Bay</a></li>
-            <li><a href="location-lux-central.html">LUX Central</a></li>
+            <li><a href="location-wan-chai.html">灣仔店</a></li>
+            <li><a href="location-causeway-bay.html">銅鑼灣店</a></li>
+            <li><a href="location-lux-central.html">LUX中環店</a></li>
+            <li><a href="location-tsim-sha-tsui.html">尖沙咀店</a></li>
           </ul>
         </li>
-        <li><a href="about.html">About SPACO</a></li>
-        <li><a href="promotions.html">Lastest Promotions</a></li>
-        <li><a href="services.html">Other Services</a></li>
-        <li><a href="pricelist.html">Pricelist</a></li>
-        <li><a href="gallery.html">Gallery</a></li>
-        <li><a href="faq.html">FAQ</a></li>
-        <li><a href="contact-us.html">Contact Us</a></li>
+        <li><a href="about-us.html">關於我們</a></li>
+        <li><a href="promotions.html">最新優惠</a></li>
+        <li><a href="services.html">額外服務</a></li>
+        <li><a href="pricelist.html">價目表</a></li>
+        <li><a href="gallery.html">相片集</a></li>
+        <li><a href="faq.html">客人須知</a></li>
+        <li><a href="contact-us.html">聯絡我們</a></li>
         <li><hr></li>
         <li class="sp-nav-two-buttons">
-          <a href="login.html">Login</a>
-          <a href="booking.html">Book Now</a>
+          <a href="login.html">登入</a>
+          <a href="booking.html">預約</a>
         </li>
         <li><span class="whatsapp-number"><img src="./assets/icons/icon_whatsapp_white.svg">+852 9282 3060</span></li>
       </ul>
@@ -48,15 +52,15 @@
   </nav>
   <nav class="pc-nav pc-only">
     <ul>
-      <li><a href="about.html">About SPACO</a></li>
+      <li><a href="about-us.html">關於我們</a></li>
       <li>|</li>
-      <li><a href="promotions.html">Lastest Promotions</a></li>
-      <li><a href="services.html">Other Services</a></li>
-      <li><a href="pricelist.html">Pricelist</a></li>
-      <li><a href="gallery.html">Gallery</a></li>
-      <li><a href="faq.html">FAQ</a></li>
+      <li><a href="promotions.html">最新優惠</a></li>
+      <li><a href="services.html">額外服務</a></li>
+      <li><a href="pricelist.html">價目表</a></li>
+      <li><a href="gallery.html">相片集</a></li>
+      <li><a href="faq.html">客人須知</a></li>
       <li>|</li>
-      <li><a href="contact-us.html">Contact Us</a></li>
+      <li><a href="contact-us.html">聯絡我們</a></li>
       <li><a href="login.html"><img src="./assets/icons/icon_user_white.svg"></a></li>
     </ul>
   </nav>
@@ -66,105 +70,157 @@
 
   <aside class="cta-bar">
     <ul class="cta-locations">
-      <li><a href="location-all.html">All Locations</a></li>
-      <li><a href="location-wan-chai.html">Wan Chai</a></li>
-      <li><a href="location-causeway-bay.html">Causeway Bay</a></li>
-      <li><a href="location-lux-central.html" class="active">LUX Central</a></li>
+      <li><a href="location-all-party-room.html">派對專區</a></li>
+      <li><a href="location-wan-chai.html">灣仔店</a></li>
+      <li><a href="location-causeway-bay.html">銅鑼灣店</a></li>
+      <li><a href="location-lux-central.html" class="active">LUX中環店</a></li>
+      <li><a href="location-tsim-sha-tsui.html">尖沙咀店</a></li>
     </ul>
     <div class="cta-booking">
       <span class="whatsapp-number"><img src="./assets/icons/icon_whatsapp_black.svg">+852 9282 3060</span>
-      <a href="booking.html" class="btn btn-green">Book Now</a>
+      <a href="booking.html" class="btn btn-green">預約</a>
     </div>
   </aside>
 
   <hgroup class="main-heading-group">
-    <h1>LUX Central</h1>
-    <p>A space that meets all your requirements</p>
+    <h1>LUX中環店</h1>
+    <p>一個滿足您所有要求的空間</p>
   </hgroup>
 
   <div class="location-data-wrapper">
     <div class="location-data">
       <div>
-        <h2>Size:</h2>
-        <p>600 sqft With Terrace</p>
+        <h2>空間:</h2>
+        <p>600呎空間</p>
       </div>
       <div>
-        <h2>Capacity:</h2>
-        <p>Minimum 6 ppl</p>
+        <h2>容納人數:</h2>
+        <p>6人</p>
       </div>
       <div>
-        <h2>From:</h2>
-        <p><strong>HKD 50</strong></p>
+        <h2>價格:</h2>
+        <p><strong>$50起</strong></p>
       </div>
-      <a href="booking.html" class="btn btn-lg btn-green">Book Now</a>
+      <a href="booking.html" class="btn btn-lg btn-green">預約</a>
     </div>
   </div>
 
   <div class="facility-twocol-wrapper">
     <div class="facility-twocol twocol">
       <div class="facility-twocol-body">
-        <h2>LUX Central Facilities</h2>
+        <h2>場地設施</h2>
         <ul>
-          <li>Poker table with chips</li>
-          <li>Mahjong</li>
-          <li>Speaker with microphones</li>
-          <li>Switch</li>
+          <li>啤牌枱連籌碼</li>
+          <li>自動麻雀機</li>
+          <li>音響設備連無線咪</li>
+          <li>Switch: Overcooked 2 / Mario Party Superstars / Mario Kart Deluxe 8 / Moving Out / Mario Strikers Battle League / Super Mario Bros Deluxe / Super Kirby Clash / Bubble Bubble 4 / Moto Rush GT / Over Watch 2 / Splatoon 3 / Fall Guys / APEX Legends / Ninjala / Asphalt Legends / Brawlhalla</li>
         </ul>
       </div>
       <img src="./assets/images/location_1.jpg" class="facility-twocol-photo">
     </div>
     <div class="facility-twocol twocol reversed">
       <div class="facility-twocol-body">
-        <h2>Facilities</h2>
+        <h2>場地設施</h2>
         <ul>
-          <li>Poker table with chips</li>
-          <li>Mahjong</li>
-          <li>Speaker with microphones</li>
-          <li>Switch</li>
+          <li>啤牌枱連籌碼</li>
+          <li>自動麻雀機</li>
+          <li>音響設備連無線咪</li>
+          <li>Switch: Overcooked 2 / Mario Party Superstars / Mario Kart Deluxe 8 / Moving Out / Mario Strikers Battle League / Super Mario Bros Deluxe / Super Kirby Clash / Bubble Bubble 4 / Moto Rush GT / Over Watch 2 / Splatoon 3 / Fall Guys / APEX Legends / Ninjala / Asphalt Legends / Brawlhalla</li>
         </ul>
       </div>
       <img src="./assets/images/location_2.jpg" class="facility-twocol-photo">
     </div>
     <div class="facility-twocol twocol">
       <div class="facility-twocol-body">
-        <h2>Facilities</h2>
+        <h2>場地設施</h2>
         <ul>
-          <li>Poker table with chips</li>
-          <li>Mahjong</li>
-          <li>Speaker with microphones</li>
-          <li>Switch</li>
+          <li>啤牌枱連籌碼</li>
+          <li>自動麻雀機</li>
+          <li>音響設備連無線咪</li>
+          <li>Switch: Overcooked 2 / Mario Party Superstars / Mario Kart Deluxe 8 / Moving Out / Mario Strikers Battle League / Super Mario Bros Deluxe / Super Kirby Clash / Bubble Bubble 4 / Moto Rush GT / Over Watch 2 / Splatoon 3 / Fall Guys / APEX Legends / Ninjala / Asphalt Legends / Brawlhalla</li>
         </ul>
       </div>
       <img src="./assets/images/location_3.jpg" class="facility-twocol-photo">
     </div>
   </div>
 
-  <div class="package-cardslider-wrapper">
-    <h2>Packages</h2>
-    <div class="package-cardslider slider">
-      <div class="package-cardslider-item slider-item">
-        <img src="./assets/images/eyecatch_4.jpg" class="package-cardslider-item-eyecatch">
-        <div class="package-cardslider-item-body">
+  <div class="slick-wrapper">
+    <div class="slick-header">
+      <h2>相片集</h2>
+      <div class="slick-filter-wrapper">
+        <button type="button" class="slick-filter-button" data-for="slider" data-filter-keyword="overview">場地總覽</button>
+        <button type="button" class="slick-filter-button" data-for="slider" data-filter-keyword="interior">內部裝修</button>
+        <button type="button" class="slick-filter-button" data-for="slider" data-filter-keyword="food-and-drinks">提供飲食</button>
+      </div>
+    </div>
+    <ul class="slider-slick">
+      <li class="slick-item" data-filter-keywords="overview">
+        <figure class="gallery-image">
+          <img src="./assets/images/location_1.jpg">
+          <figcaption>大廳</figcaption>
+        </figure>
+      </li>
+      <li class="slick-item" data-filter-keywords="overview">
+        <figure class="gallery-image">
+          <img src="./assets/images/location_2.jpg">
+          <figcaption>大廳</figcaption>
+        </figure>
+      </li>
+      <li class="slick-item" data-filter-keywords="interior">
+        <figure class="gallery-image">
+          <img src="./assets/images/location_3.jpg">
+          <figcaption>大廳</figcaption>
+        </figure>
+      </li>
+      <li class="slick-item" data-filter-keywords="interior">
+        <figure class="gallery-image">
+          <img src="./assets/images/location_1.jpg">
+          <figcaption>大廳</figcaption>
+        </figure>
+      </li>
+      <li class="slick-item" data-filter-keywords="food-and-drinks">
+        <figure class="gallery-image">
+          <img src="./assets/images/location_2.jpg">
+          <figcaption>大廳</figcaption>
+        </figure>
+      </li>
+      <li class="slick-item" data-filter-keywords="food-and-drinks">
+        <figure class="gallery-image">
+          <img src="./assets/images/location_3.jpg">
+          <figcaption>大廳</figcaption>
+        </figure>
+      </li>
+    </ul>
+  </div>
+
+  <div class="slick-wrapper">
+    <div class="slick-header">
+      <h2>額外服務</h2>
+    </div>
+    <ul class="slider-slick">
+      <li class="slick-item">
+        <div class="package-details">
+          <img src="./assets/images/package_1.jpg">
           <h3>Shisha Package</h3>
           <ul>
             <li>歡迎WHATSAPP查詢</li>
             <li>最少1日前預訂</li>
           </ul>
         </div>
-      </div>
-      <div class="package-cardslider-item slider-item">
-        <img src="./assets/images/eyecatch_5.jpg" class="package-cardslider-item-eyecatch">
-        <div class="package-cardslider-item-body">
+      </li>
+      <li class="slick-item">
+        <div class="package-details">
+          <img src="./assets/images/package_2.jpg">
           <h3>火鍋 Package</h3>
           <ul>
             <li>歡迎WHATSAPP查詢</li>
             <li>最少8人起，星期一至日同價。</li>
           </ul>
         </div>
-      </div>
-      <div class="package-cardslider-item slider-item">
-        <img src="./assets/images/eyecatch_6.jpg" class="package-cardslider-item-eyecatch">
-        <div class="package-cardslider-item-body">
+      </li>
+      <li class="slick-item">
+        <div class="package-details">
+          <img src="./assets/images/package_3.jpg">
           <h3>BBQ 燒烤 Package</h3>
           <ul>
             <li>經典燒烤餐</li>
@@ -173,10 +229,10 @@
             <li>最少8人起，星期一至日同價。</li>
           </ul>
         </div>
-      </div>
-      <div class="package-cardslider-item slider-item">
-        <img src="./assets/images/eyecatch_7.jpg">
-        <div class="package-cardslider-item-body">
+      </li>
+      <li class="slick-item">
+        <div class="package-details">
+          <img src="./assets/images/package_4.jpg">
           <h3>代訂大閘蟹</h3>
           <p>預訂場地即可代訂大閘蟹!</p>
           <p>免收加工費!場地提供廚房自行加工</p>
@@ -186,8 +242,8 @@
             <li>​合作商戶 : 永豐大閘蟹專家 @wingfungfoodhk</li>
           </ul>
         </div>
-      </div>
-    </div>
+      </li>
+    </ul>
   </div>
 
 </main>
@@ -195,7 +251,7 @@
 <footer>
   <div class="footer-backtotop">
     <button type="button" class="footer-backtotop-button">
-      Back to the top
+      返回頁頂
       <svg width="15" height="16" viewBox="0 0 15 16" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M1.5 7L7.5 1L13.5 7M7.5 1V15" stroke="currentcolor" />
       </svg>
@@ -204,19 +260,19 @@
   <div class="footer-body">
     <div class="footer-top">
       <div class="footer-contact">
-        <h2>Contact Us</h2>
+        <h2>聯絡我們</h2>
         <p>
           WhatsApp: +852 9282 3060<br>
-          Email: spacohk@gmail.com<br>
-          Booking & Enquiry: 10:00am – 11:00pm
+          電郵: spacohk@gmail.com<br>
+          預約及查詢: 10:00am – 11:00pm
         </p>
       </div>
       <div class="footer-address">
-        <h2>Address</h2>
+        <h2>地址</h2>
         <p>
-          Wan Chai, Hong Kong<br>
-          (By Reservation Only)<br>
-          Open hours : 09:00am – 02:00am
+          灣仔<br>
+          (僅限預訂)<br>
+          辦公時間: 09:00am – 02:00am
         </p>
       </div>
     </div>
@@ -228,7 +284,7 @@
         <li><a href="#"><img src="./assets/icons/icon_google_white.svg"></a></li>
         <li><a href="#"><img src="./assets/icons/icon_twitter_white.svg"></a></li>
       </ul>
-      <span class="footer-copyright">Copyright @ Spaco</span>
+      <span class="footer-copyright">Copyright © Spaco</span>
     </div>
   </div>
 </footer>
