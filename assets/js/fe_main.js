@@ -23,7 +23,7 @@ $(document).ready(function () {
   const sliderOptions = {
     infinite: false,
     slidesToShow: 4,
-    slidesToScroll: 1,
+    swipeToSlide: true,
     arrows: false,
     responsive: [
       { breakpoint: 960, settings: { slidesToShow: 3 } },
