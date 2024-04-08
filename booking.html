@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="./assets/images/favicon.png" type="image/x-icon">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+  <link rel="stylesheet" href="./assets/css/fe_booking.css">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+  <script src="./assets/js/fe_booking.js"></script>
+  <title>預約 | SPACO</title>
+</head>
+
+
+<body>
+
+  <main>
+
+    <input type="hidden" name="booking_persons_and_time_template" id="booking_persons_and_time_template" value="成人: $1 / 小童: $2 / 幼童: $3&lt;br&gt;日期: $4&lt;br&gt;時間: $5 — $6">
+
+    <div id="main-topbar">
+      <a href="index.html" class="back-link">
+        <img src="./assets/icons/icon_chevron_left_circle_black.svg">
+        返回
+      </a>
+    </div>
+
+    <form action="javascript:void(0);" method="post" enctype="multipart/form-data" novalidate id="booking-form">
+      <input type="hidden" name="booking_location_id" id="booking_location_id">
+      <input type="hidden" disabled name="booking_service[7]" id="booking_service_7">
+      <input type="hidden" disabled name="booking_service[8]" id="booking_service_8">
+      <input type="hidden" disabled name="booking_service[9]" id="booking_service_9">
+
+      <div class="form-page" data-page="1">
+        <h2>選擇地點</h2>
+        <ul class="slider-slick">
+          <li class="slider-slick-item">
+            <button type="button" class="booking-location-button form-navigate" data-page="2" data-field-name="booking_location_id" data-field-value="1">
+              <img src="./assets/images/location_1.jpg">
+              <div class="booking-location-text">
+                <div class="booking-location-number">01</div>
+                <div class="booking-location-name">灣仔店</div>
+              </div>
+            </button>
+          </li>
+          <li class="slider-slick-item">
+            <button type="button" class="booking-location-button form-navigate" data-page="2" data-field-name="booking_location_id" data-field-value="2">
+              <img src="./assets/images/location_2.jpg">
+              <div class="booking-location-text">
+                <div class="booking-location-number">02</div>
+                <div class="booking-location-name">銅鑼灣店</div>
+              </div>
+            </button>
+          </li>
+          <li class="slider-slick-item">
+            <button type="button" class="booking-location-button form-navigate" data-page="2" data-field-name="booking_location_id" data-field-value="3">
+              <img src="./assets/images/location_3.jpg">
+              <div class="booking-location-text">
+                <div class="booking-location-number">03</div>
+                <div class="booking-location-name">LUX中環店</div>
+              </div>
+            </button>
+          </li>
+          <li class="slider-slick-item">
+            <button type="button" class="booking-location-button form-navigate" data-page="2" data-field-name="booking_location_id" data-field-value="4">
+              <img src="./assets/images/location_4.jpg">
+              <div class="booking-location-text">
+                <div class="booking-location-number">04</div>
+                <div class="booking-location-name">尖沙咀店</div>
+              </div>
+            </button>
+          </li>
+        </ul>
+      </div>
+
+      <div class="form-page" data-page="2" style="display: none;">
+        <h2>選擇人數及時間</h2>
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-12 mb-4">
+              <div class="form-label">人數</div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="form-floating col-4 mb-4">
+              <input type="number" required value="0" min="0" step="1" placeholder="" name="booking_persons_adult" id="booking_persons_adult" class="form-control text-center">
+              <label for="booking_persons_adult">成人</label>
+            </div>
+            <div class="form-floating col-4 mb-4">
+              <input type="number" required value="0" min="0" step="1" placeholder="" name="booking_persons_child" id="booking_persons_child" class="form-control text-center">
+              <label for="booking_persons_child">小童 (2—9)</label>
+            </div>
+            <div class="form-floating col-4 mb-4">
+              <input type="number" required value="0" min="0" step="1" placeholder="" name="booking_persons_toddler" id="booking_persons_toddler" class="form-control text-center">
+              <label for="booking_persons_toddler">幼童 (0—2)</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12 mb-4">
+              <span class="form-label">日期</span>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12 mb-4">
+              <select required name="booking_date" id="booking_date" class="form-select text-center">
+                <option value="2024-04-01">2024-04-01</option>
+                <option value="2024-04-02">2024-04-02</option>
+                <option value="2024-04-03">2024-04-03</option>
+                <option value="2024-04-04">2024-04-04</option>
+                <option value="2024-04-05">2024-04-05</option>
+                <option value="2024-04-06">2024-04-06</option>
+                <option value="2024-04-07">2024-04-07</option>
+              </select>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12 mb-4">
+              <div class="form-label">開始時間</div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-4 mb-4">
+              <button type="button" class="booking-period-jump btn btn-outline-primary w-100" data-target="morning">上午</button>
+            </div>
+            <div class="col-4 mb-4">
+              <button type="button" class="booking-period-jump btn btn-outline-primary w-100" data-target="afternoon">下午</button>
+            </div>
+            <div class="col-4 mb-4">
+              <button type="button" class="booking-period-jump btn btn-outline-primary w-100" data-target="evening">夜晚</button>
+            </div>
+            <div class="booking-time-container-outer col-12 mb-4">
+              <div class="booking-time-container">
+                <input type="radio" required name="booking_time_start" value="06:00" id="booking_time_start-0600" class="booking-time-radio btn-check" checked data-target="morning"><label for="booking_time_start-0600" class="btn btn-outline-primary">06:00</label>
+                <input type="radio" required name="booking_time_start" value="06:15" id="booking_time_start-0615" class="booking-time-radio btn-check"><label for="booking_time_start-0615" class="btn btn-outline-primary">06:15</label>
+                <input type="radio" required name="booking_time_start" value="06:30" id="booking_time_start-0630" class="booking-time-radio btn-check"><label for="booking_time_start-0630" class="btn btn-outline-primary">06:30</label>
+                <input type="radio" required name="booking_time_start" value="06:45" id="booking_time_start-0645" class="booking-time-radio btn-check"><label for="booking_time_start-0645" class="btn btn-outline-primary">06:45</label>
+                <input type="radio" required name="booking_time_start" value="07:00" id="booking_time_start-0700" class="booking-time-radio btn-check"><label for="booking_time_start-0700" class="btn btn-outline-primary">07:00</label>
+                <input type="radio" required name="booking_time_start" value="07:15" id="booking_time_start-0715" class="booking-time-radio btn-check"><label for="booking_time_start-0715" class="btn btn-outline-primary">07:15</label>
+                <input type="radio" required name="booking_time_start" value="07:30" id="booking_time_start-0730" class="booking-time-radio btn-check"><label for="booking_time_start-0730" class="btn btn-outline-primary">07:30</label>
+                <input type="radio" required name="booking_time_start" value="07:45" id="booking_time_start-0745" class="booking-time-radio btn-check"><label for="booking_time_start-0745" class="btn btn-outline-primary">07:45</label>
+                <input type="radio" required name="booking_time_start" value="08:00" id="booking_time_start-0800" class="booking-time-radio btn-check"><label for="booking_time_start-0800" class="btn btn-outline-primary">08:00</label>
+                <input type="radio" required name="booking_time_start" value="08:15" id="booking_time_start-0815" class="booking-time-radio btn-check"><label for="booking_time_start-0815" class="btn btn-outline-primary">08:15</label>
+                <input type="radio" required name="booking_time_start" value="08:30" id="booking_time_start-0830" class="booking-time-radio btn-check"><label for="booking_time_start-0830" class="btn btn-outline-primary">08:30</label>
+                <input type="radio" required name="booking_time_start" value="08:45" id="booking_time_start-0845" class="booking-time-radio btn-check"><label for="booking_time_start-0845" class="btn btn-outline-primary">08:45</label>
+                <input type="radio" required name="booking_time_start" value="09:00" id="booking_time_start-0900" class="booking-time-radio btn-check"><label for="booking_time_start-0900" class="btn btn-outline-primary">09:00</label>
+                <input type="radio" required name="booking_time_start" value="09:15" id="booking_time_start-0915" class="booking-time-radio btn-check"><label for="booking_time_start-0915" class="btn btn-outline-primary">09:15</label>
+                <input type="radio" required name="booking_time_start" value="09:30" id="booking_time_start-0930" class="booking-time-radio btn-check"><label for="booking_time_start-0930" class="btn btn-outline-primary">09:30</label>
+                <input type="radio" required name="booking_time_start" value="09:45" id="booking_time_start-0945" class="booking-time-radio btn-check"><label for="booking_time_start-0945" class="btn btn-outline-primary">09:45</label>
+                <input type="radio" required name="booking_time_start" value="10:00" id="booking_time_start-1000" class="booking-time-radio btn-check"><label for="booking_time_start-1000" class="btn btn-outline-primary">10:00</label>
+                <input type="radio" required name="booking_time_start" value="10:15" id="booking_time_start-1015" class="booking-time-radio btn-check"><label for="booking_time_start-1015" class="btn btn-outline-primary">10:15</label>
+                <input type="radio" required name="booking_time_start" value="10:30" id="booking_time_start-1030" class="booking-time-radio btn-check"><label for="booking_time_start-1030" class="btn btn-outline-primary">10:30</label>
+                <input type="radio" required name="booking_time_start" value="10:45" id="booking_time_start-1045" class="booking-time-radio btn-check"><label for="booking_time_start-1045" class="btn btn-outline-primary">10:45</label>
+                <input type="radio" required name="booking_time_start" value="11:00" id="booking_time_start-1100" class="booking-time-radio btn-check"><label for="booking_time_start-1100" class="btn btn-outline-primary">11:00</label>
+                <input type="radio" required name="booking_time_start" value="11:15" id="booking_time_start-1115" class="booking-time-radio btn-check"><label for="booking_time_start-1115" class="btn btn-outline-primary">11:15</label>
+                <input type="radio" required name="booking_time_start" value="11:30" id="booking_time_start-1130" class="booking-time-radio btn-check"><label for="booking_time_start-1130" class="btn btn-outline-primary">11:30</label>
+                <input type="radio" required name="booking_time_start" value="11:45" id="booking_time_start-1145" class="booking-time-radio btn-check"><label for="booking_time_start-1145" class="btn btn-outline-primary">11:45</label>
+                <input type="radio" required name="booking_time_start" value="12:00" id="booking_time_start-1200" class="booking-time-radio btn-check" data-target="afternoon"><label for="booking_time_start-1200" class="btn btn-outline-primary">12:00</label>
+                <input type="radio" required name="booking_time_start" value="12:15" id="booking_time_start-1215" class="booking-time-radio btn-check"><label for="booking_time_start-1215" class="btn btn-outline-primary">12:15</label>
+                <input type="radio" required name="booking_time_start" value="12:30" id="booking_time_start-1230" class="booking-time-radio btn-check"><label for="booking_time_start-1230" class="btn btn-outline-primary">12:30</label>
+                <input type="radio" required name="booking_time_start" value="12:45" id="booking_time_start-1245" class="booking-time-radio btn-check"><label for="booking_time_start-1245" class="btn btn-outline-primary">12:45</label>
+                <input type="radio" required name="booking_time_start" value="13:00" id="booking_time_start-1300" class="booking-time-radio btn-check"><label for="booking_time_start-1300" class="btn btn-outline-primary">13:00</label>
+                <input type="radio" required name="booking_time_start" value="13:15" id="booking_time_start-1315" class="booking-time-radio btn-check"><label for="booking_time_start-1315" class="btn btn-outline-primary">13:15</label>
+                <input type="radio" required name="booking_time_start" value="13:30" id="booking_time_start-1330" class="booking-time-radio btn-check"><label for="booking_time_start-1330" class="btn btn-outline-primary">13:30</label>
+                <input type="radio" required name="booking_time_start" value="13:45" id="booking_time_start-1345" class="booking-time-radio btn-check"><label for="booking_time_start-1345" class="btn btn-outline-primary">13:45</label>
+                <input type="radio" required name="booking_time_start" value="14:00" id="booking_time_start-1400" class="booking-time-radio btn-check"><label for="booking_time_start-1400" class="btn btn-outline-primary">14:00</label>
+                <input type="radio" required name="booking_time_start" value="14:15" id="booking_time_start-1415" class="booking-time-radio btn-check"><label for="booking_time_start-1415" class="btn btn-outline-primary">14:15</label>
+                <input type="radio" required name="booking_time_start" value="14:30" id="booking_time_start-1430" class="booking-time-radio btn-check"><label for="booking_time_start-1430" class="btn btn-outline-primary">14:30</label>
+                <input type="radio" required name="booking_time_start" value="14:45" id="booking_time_start-1445" class="booking-time-radio btn-check"><label for="booking_time_start-1445" class="btn btn-outline-primary">14:45</label>
+                <input type="radio" required name="booking_time_start" value="15:00" id="booking_time_start-1500" class="booking-time-radio btn-check"><label for="booking_time_start-1500" class="btn btn-outline-primary">15:00</label>
+                <input type="radio" required name="booking_time_start" value="15:15" id="booking_time_start-1515" class="booking-time-radio btn-check"><label for="booking_time_start-1515" class="btn btn-outline-primary">15:15</label>
+                <input type="radio" required name="booking_time_start" value="15:30" id="booking_time_start-1530" class="booking-time-radio btn-check"><label for="booking_time_start-1530" class="btn btn-outline-primary">15:30</label>
+                <input type="radio" required name="booking_time_start" value="15:45" id="booking_time_start-1545" class="booking-time-radio btn-check"><label for="booking_time_start-1545" class="btn btn-outline-primary">15:45</label>
+                <input type="radio" required name="booking_time_start" value="16:00" id="booking_time_start-1600" class="booking-time-radio btn-check"><label for="booking_time_start-1600" class="btn btn-outline-primary">16:00</label>
+                <input type="radio" required name="booking_time_start" value="16:15" id="booking_time_start-1615" class="booking-time-radio btn-check"><label for="booking_time_start-1615" class="btn btn-outline-primary">16:15</label>
+                <input type="radio" required name="booking_time_start" value="16:30" id="booking_time_start-1630" class="booking-time-radio btn-check"><label for="booking_time_start-1630" class="btn btn-outline-primary">16:30</label>
+                <input type="radio" required name="booking_time_start" value="16:45" id="booking_time_start-1645" class="booking-time-radio btn-check"><label for="booking_time_start-1645" class="btn btn-outline-primary">16:45</label>
+                <input type="radio" required name="booking_time_start" value="17:00" id="booking_time_start-1700" class="booking-time-radio btn-check"><label for="booking_time_start-1700" class="btn btn-outline-primary">17:00</label>
+                <input type="radio" required name="booking_time_start" value="17:15" id="booking_time_start-1715" class="booking-time-radio btn-check"><label for="booking_time_start-1715" class="btn btn-outline-primary">17:15</label>
+                <input type="radio" required name="booking_time_start" value="17:30" id="booking_time_start-1730" class="booking-time-radio btn-check"><label for="booking_time_start-1730" class="btn btn-outline-primary">17:30</label>
+                <input type="radio" required name="booking_time_start" value="17:45" id="booking_time_start-1745" class="booking-time-radio btn-check"><label for="booking_time_start-1745" class="btn btn-outline-primary">17:45</label>
+                <input type="radio" required name="booking_time_start" value="18:00" id="booking_time_start-1800" class="booking-time-radio btn-check" data-target="evening"><label for="booking_time_start-1800" class="btn btn-outline-primary">18:00</label>
+                <input type="radio" required name="booking_time_start" value="18:15" id="booking_time_start-1815" class="booking-time-radio btn-check"><label for="booking_time_start-1815" class="btn btn-outline-primary">18:15</label>
+                <input type="radio" required name="booking_time_start" value="18:30" id="booking_time_start-1830" class="booking-time-radio btn-check"><label for="booking_time_start-1830" class="btn btn-outline-primary">18:30</label>
+                <input type="radio" required name="booking_time_start" value="18:45" id="booking_time_start-1845" class="booking-time-radio btn-check"><label for="booking_time_start-1845" class="btn btn-outline-primary">18:45</label>
+                <input type="radio" required name="booking_time_start" value="19:00" id="booking_time_start-1900" class="booking-time-radio btn-check"><label for="booking_time_start-1900" class="btn btn-outline-primary">19:00</label>
+                <input type="radio" required name="booking_time_start" value="19:15" id="booking_time_start-1915" class="booking-time-radio btn-check"><label for="booking_time_start-1915" class="btn btn-outline-primary">19:15</label>
+                <input type="radio" required name="booking_time_start" value="19:30" id="booking_time_start-1930" class="booking-time-radio btn-check"><label for="booking_time_start-1930" class="btn btn-outline-primary">19:30</label>
+                <input type="radio" required name="booking_time_start" value="19:45" id="booking_time_start-1945" class="booking-time-radio btn-check"><label for="booking_time_start-1945" class="btn btn-outline-primary">19:45</label>
+                <input type="radio" required name="booking_time_start" value="20:00" id="booking_time_start-2000" class="booking-time-radio btn-check"><label for="booking_time_start-2000" class="btn btn-outline-primary">20:00</label>
+                <input type="radio" required name="booking_time_start" value="20:15" id="booking_time_start-2015" class="booking-time-radio btn-check"><label for="booking_time_start-2015" class="btn btn-outline-primary">20:15</label>
+                <input type="radio" required name="booking_time_start" value="20:30" id="booking_time_start-2030" class="booking-time-radio btn-check"><label for="booking_time_start-2030" class="btn btn-outline-primary">20:30</label>
+                <input type="radio" required name="booking_time_start" value="20:45" id="booking_time_start-2045" class="booking-time-radio btn-check"><label for="booking_time_start-2045" class="btn btn-outline-primary">20:45</label>
+                <input type="radio" required name="booking_time_start" value="21:00" id="booking_time_start-2100" class="booking-time-radio btn-check"><label for="booking_time_start-2100" class="btn btn-outline-primary">21:00</label>
+                <input type="radio" required name="booking_time_start" value="21:15" id="booking_time_start-2115" class="booking-time-radio btn-check"><label for="booking_time_start-2115" class="btn btn-outline-primary">21:15</label>
+                <input type="radio" required name="booking_time_start" value="21:30" id="booking_time_start-2130" class="booking-time-radio btn-check"><label for="booking_time_start-2130" class="btn btn-outline-primary">21:30</label>
+                <input type="radio" required name="booking_time_start" value="21:45" id="booking_time_start-2145" class="booking-time-radio btn-check"><label for="booking_time_start-2145" class="btn btn-outline-primary">21:45</label>
+                <input type="radio" required name="booking_time_start" value="22:00" id="booking_time_start-2200" class="booking-time-radio btn-check"><label for="booking_time_start-2200" class="btn btn-outline-primary">22:00</label>
+                <input type="radio" required name="booking_time_start" value="22:15" id="booking_time_start-2215" class="booking-time-radio btn-check"><label for="booking_time_start-2215" class="btn btn-outline-primary">22:15</label>
+                <input type="radio" required name="booking_time_start" value="22:30" id="booking_time_start-2230" class="booking-time-radio btn-check"><label for="booking_time_start-2230" class="btn btn-outline-primary">22:30</label>
+                <input type="radio" required name="booking_time_start" value="22:45" id="booking_time_start-2245" class="booking-time-radio btn-check"><label for="booking_time_start-2245" class="btn btn-outline-primary">22:45</label>
+                <input type="radio" required name="booking_time_start" value="23:00" id="booking_time_start-2300" class="booking-time-radio btn-check"><label for="booking_time_start-2300" class="btn btn-outline-primary">23:00</label>
+                <input type="radio" required name="booking_time_start" value="23:15" id="booking_time_start-2315" class="booking-time-radio btn-check"><label for="booking_time_start-2315" class="btn btn-outline-primary">23:15</label>
+                <input type="radio" required name="booking_time_start" value="23:30" id="booking_time_start-2330" class="booking-time-radio btn-check"><label for="booking_time_start-2330" class="btn btn-outline-primary">23:30</label>
+                <input type="radio" required name="booking_time_start" value="23:45" id="booking_time_start-2345" class="booking-time-radio btn-check"><label for="booking_time_start-2345" class="btn btn-outline-primary">23:45</label>
+                <input type="radio" required name="booking_time_start" value="00:00" id="booking_time_start-0000" class="booking-time-radio btn-check"><label for="booking_time_start-0000" class="btn btn-outline-primary">00:00</label>
+              </div>
+              <button type="button" class="booking-time-scroll left" style="display: none;"><img src="./assets/icons/icon_chevron_left_circle_black.svg"></button>
+              <button type="button" class="booking-time-scroll right"><img src="./assets/icons/icon_chevron_right_circle_black.svg"></button>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12 mb-4">
+              <div class="form-label">結束時間</div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-4 mb-4">
+              <button type="button" class="booking-period-jump btn btn-outline-primary w-100" data-target="morning">上午</button>
+            </div>
+            <div class="col-4 mb-4">
+              <button type="button" class="booking-period-jump btn btn-outline-primary w-100" data-target="afternoon">下午</button>
+            </div>
+            <div class="col-4 mb-4">
+              <button type="button" class="booking-period-jump btn btn-outline-primary w-100" data-target="evening">夜晚</button>
+            </div>
+            <div class="booking-time-container-outer col-12 mb-4">
+              <div class="booking-time-container">
+                <input type="radio" required name="booking_time_end" value="06:00" id="booking_time_end-0600" class="booking-time-radio btn-check" checked data-target="morning"><label for="booking_time_end-0600" class="btn btn-outline-primary">06:00</label>
+                <input type="radio" required name="booking_time_end" value="06:15" id="booking_time_end-0615" class="booking-time-radio btn-check"><label for="booking_time_end-0615" class="btn btn-outline-primary">06:15</label>
+                <input type="radio" required name="booking_time_end" value="06:30" id="booking_time_end-0630" class="booking-time-radio btn-check"><label for="booking_time_end-0630" class="btn btn-outline-primary">06:30</label>
+                <input type="radio" required name="booking_time_end" value="06:45" id="booking_time_end-0645" class="booking-time-radio btn-check"><label for="booking_time_end-0645" class="btn btn-outline-primary">06:45</label>
+                <input type="radio" required name="booking_time_end" value="07:00" id="booking_time_end-0700" class="booking-time-radio btn-check"><label for="booking_time_end-0700" class="btn btn-outline-primary">07:00</label>
+                <input type="radio" required name="booking_time_end" value="07:15" id="booking_time_end-0715" class="booking-time-radio btn-check"><label for="booking_time_end-0715" class="btn btn-outline-primary">07:15</label>
+                <input type="radio" required name="booking_time_end" value="07:30" id="booking_time_end-0730" class="booking-time-radio btn-check"><label for="booking_time_end-0730" class="btn btn-outline-primary">07:30</label>
+                <input type="radio" required name="booking_time_end" value="07:45" id="booking_time_end-0745" class="booking-time-radio btn-check"><label for="booking_time_end-0745" class="btn btn-outline-primary">07:45</label>
+                <input type="radio" required name="booking_time_end" value="08:00" id="booking_time_end-0800" class="booking-time-radio btn-check"><label for="booking_time_end-0800" class="btn btn-outline-primary">08:00</label>
+                <input type="radio" required name="booking_time_end" value="08:15" id="booking_time_end-0815" class="booking-time-radio btn-check"><label for="booking_time_end-0815" class="btn btn-outline-primary">08:15</label>
+                <input type="radio" required name="booking_time_end" value="08:30" id="booking_time_end-0830" class="booking-time-radio btn-check"><label for="booking_time_end-0830" class="btn btn-outline-primary">08:30</label>
+                <input type="radio" required name="booking_time_end" value="08:45" id="booking_time_end-0845" class="booking-time-radio btn-check"><label for="booking_time_end-0845" class="btn btn-outline-primary">08:45</label>
+                <input type="radio" required name="booking_time_end" value="09:00" id="booking_time_end-0900" class="booking-time-radio btn-check"><label for="booking_time_end-0900" class="btn btn-outline-primary">09:00</label>
+                <input type="radio" required name="booking_time_end" value="09:15" id="booking_time_end-0915" class="booking-time-radio btn-check"><label for="booking_time_end-0915" class="btn btn-outline-primary">09:15</label>
+                <input type="radio" required name="booking_time_end" value="09:30" id="booking_time_end-0930" class="booking-time-radio btn-check"><label for="booking_time_end-0930" class="btn btn-outline-primary">09:30</label>
+                <input type="radio" required name="booking_time_end" value="09:45" id="booking_time_end-0945" class="booking-time-radio btn-check"><label for="booking_time_end-0945" class="btn btn-outline-primary">09:45</label>
+                <input type="radio" required name="booking_time_end" value="10:00" id="booking_time_end-1000" class="booking-time-radio btn-check"><label for="booking_time_end-1000" class="btn btn-outline-primary">10:00</label>
+                <input type="radio" required name="booking_time_end" value="10:15" id="booking_time_end-1015" class="booking-time-radio btn-check"><label for="booking_time_end-1015" class="btn btn-outline-primary">10:15</label>
+                <input type="radio" required name="booking_time_end" value="10:30" id="booking_time_end-1030" class="booking-time-radio btn-check"><label for="booking_time_end-1030" class="btn btn-outline-primary">10:30</label>
+                <input type="radio" required name="booking_time_end" value="10:45" id="booking_time_end-1045" class="booking-time-radio btn-check"><label for="booking_time_end-1045" class="btn btn-outline-primary">10:45</label>
+                <input type="radio" required name="booking_time_end" value="11:00" id="booking_time_end-1100" class="booking-time-radio btn-check"><label for="booking_time_end-1100" class="btn btn-outline-primary">11:00</label>
+                <input type="radio" required name="booking_time_end" value="11:15" id="booking_time_end-1115" class="booking-time-radio btn-check"><label for="booking_time_end-1115" class="btn btn-outline-primary">11:15</label>
+                <input type="radio" required name="booking_time_end" value="11:30" id="booking_time_end-1130" class="booking-time-radio btn-check"><label for="booking_time_end-1130" class="btn btn-outline-primary">11:30</label>
+                <input type="radio" required name="booking_time_end" value="11:45" id="booking_time_end-1145" class="booking-time-radio btn-check"><label for="booking_time_end-1145" class="btn btn-outline-primary">11:45</label>
+                <input type="radio" required name="booking_time_end" value="12:00" id="booking_time_end-1200" class="booking-time-radio btn-check" data-target="afternoon"><label for="booking_time_end-1200" class="btn btn-outline-primary">12:00</label>
+                <input type="radio" required name="booking_time_end" value="12:15" id="booking_time_end-1215" class="booking-time-radio btn-check"><label for="booking_time_end-1215" class="btn btn-outline-primary">12:15</label>
+                <input type="radio" required name="booking_time_end" value="12:30" id="booking_time_end-1230" class="booking-time-radio btn-check"><label for="booking_time_end-1230" class="btn btn-outline-primary">12:30</label>
+                <input type="radio" required name="booking_time_end" value="12:45" id="booking_time_end-1245" class="booking-time-radio btn-check"><label for="booking_time_end-1245" class="btn btn-outline-primary">12:45</label>
+                <input type="radio" required name="booking_time_end" value="13:00" id="booking_time_end-1300" class="booking-time-radio btn-check"><label for="booking_time_end-1300" class="btn btn-outline-primary">13:00</label>
+                <input type="radio" required name="booking_time_end" value="13:15" id="booking_time_end-1315" class="booking-time-radio btn-check"><label for="booking_time_end-1315" class="btn btn-outline-primary">13:15</label>
+                <input type="radio" required name="booking_time_end" value="13:30" id="booking_time_end-1330" class="booking-time-radio btn-check"><label for="booking_time_end-1330" class="btn btn-outline-primary">13:30</label>
+                <input type="radio" required name="booking_time_end" value="13:45" id="booking_time_end-1345" class="booking-time-radio btn-check"><label for="booking_time_end-1345" class="btn btn-outline-primary">13:45</label>
+                <input type="radio" required name="booking_time_end" value="14:00" id="booking_time_end-1400" class="booking-time-radio btn-check"><label for="booking_time_end-1400" class="btn btn-outline-primary">14:00</label>
+                <input type="radio" required name="booking_time_end" value="14:15" id="booking_time_end-1415" class="booking-time-radio btn-check"><label for="booking_time_end-1415" class="btn btn-outline-primary">14:15</label>
+                <input type="radio" required name="booking_time_end" value="14:30" id="booking_time_end-1430" class="booking-time-radio btn-check"><label for="booking_time_end-1430" class="btn btn-outline-primary">14:30</label>
+                <input type="radio" required name="booking_time_end" value="14:45" id="booking_time_end-1445" class="booking-time-radio btn-check"><label for="booking_time_end-1445" class="btn btn-outline-primary">14:45</label>
+                <input type="radio" required name="booking_time_end" value="15:00" id="booking_time_end-1500" class="booking-time-radio btn-check"><label for="booking_time_end-1500" class="btn btn-outline-primary">15:00</label>
+                <input type="radio" required name="booking_time_end" value="15:15" id="booking_time_end-1515" class="booking-time-radio btn-check"><label for="booking_time_end-1515" class="btn btn-outline-primary">15:15</label>
+                <input type="radio" required name="booking_time_end" value="15:30" id="booking_time_end-1530" class="booking-time-radio btn-check"><label for="booking_time_end-1530" class="btn btn-outline-primary">15:30</label>
+                <input type="radio" required name="booking_time_end" value="15:45" id="booking_time_end-1545" class="booking-time-radio btn-check"><label for="booking_time_end-1545" class="btn btn-outline-primary">15:45</label>
+                <input type="radio" required name="booking_time_end" value="16:00" id="booking_time_end-1600" class="booking-time-radio btn-check"><label for="booking_time_end-1600" class="btn btn-outline-primary">16:00</label>
+                <input type="radio" required name="booking_time_end" value="16:15" id="booking_time_end-1615" class="booking-time-radio btn-check"><label for="booking_time_end-1615" class="btn btn-outline-primary">16:15</label>
+                <input type="radio" required name="booking_time_end" value="16:30" id="booking_time_end-1630" class="booking-time-radio btn-check"><label for="booking_time_end-1630" class="btn btn-outline-primary">16:30</label>
+                <input type="radio" required name="booking_time_end" value="16:45" id="booking_time_end-1645" class="booking-time-radio btn-check"><label for="booking_time_end-1645" class="btn btn-outline-primary">16:45</label>
+                <input type="radio" required name="booking_time_end" value="17:00" id="booking_time_end-1700" class="booking-time-radio btn-check"><label for="booking_time_end-1700" class="btn btn-outline-primary">17:00</label>
+                <input type="radio" required name="booking_time_end" value="17:15" id="booking_time_end-1715" class="booking-time-radio btn-check"><label for="booking_time_end-1715" class="btn btn-outline-primary">17:15</label>
+                <input type="radio" required name="booking_time_end" value="17:30" id="booking_time_end-1730" class="booking-time-radio btn-check"><label for="booking_time_end-1730" class="btn btn-outline-primary">17:30</label>
+                <input type="radio" required name="booking_time_end" value="17:45" id="booking_time_end-1745" class="booking-time-radio btn-check"><label for="booking_time_end-1745" class="btn btn-outline-primary">17:45</label>
+                <input type="radio" required name="booking_time_end" value="18:00" id="booking_time_end-1800" class="booking-time-radio btn-check" data-target="evening"><label for="booking_time_end-1800" class="btn btn-outline-primary">18:00</label>
+                <input type="radio" required name="booking_time_end" value="18:15" id="booking_time_end-1815" class="booking-time-radio btn-check"><label for="booking_time_end-1815" class="btn btn-outline-primary">18:15</label>
+                <input type="radio" required name="booking_time_end" value="18:30" id="booking_time_end-1830" class="booking-time-radio btn-check"><label for="booking_time_end-1830" class="btn btn-outline-primary">18:30</label>
+                <input type="radio" required name="booking_time_end" value="18:45" id="booking_time_end-1845" class="booking-time-radio btn-check"><label for="booking_time_end-1845" class="btn btn-outline-primary">18:45</label>
+                <input type="radio" required name="booking_time_end" value="19:00" id="booking_time_end-1900" class="booking-time-radio btn-check"><label for="booking_time_end-1900" class="btn btn-outline-primary">19:00</label>
+                <input type="radio" required name="booking_time_end" value="19:15" id="booking_time_end-1915" class="booking-time-radio btn-check"><label for="booking_time_end-1915" class="btn btn-outline-primary">19:15</label>
+                <input type="radio" required name="booking_time_end" value="19:30" id="booking_time_end-1930" class="booking-time-radio btn-check"><label for="booking_time_end-1930" class="btn btn-outline-primary">19:30</label>
+                <input type="radio" required name="booking_time_end" value="19:45" id="booking_time_end-1945" class="booking-time-radio btn-check"><label for="booking_time_end-1945" class="btn btn-outline-primary">19:45</label>
+                <input type="radio" required name="booking_time_end" value="20:00" id="booking_time_end-2000" class="booking-time-radio btn-check"><label for="booking_time_end-2000" class="btn btn-outline-primary">20:00</label>
+                <input type="radio" required name="booking_time_end" value="20:15" id="booking_time_end-2015" class="booking-time-radio btn-check"><label for="booking_time_end-2015" class="btn btn-outline-primary">20:15</label>
+                <input type="radio" required name="booking_time_end" value="20:30" id="booking_time_end-2030" class="booking-time-radio btn-check"><label for="booking_time_end-2030" class="btn btn-outline-primary">20:30</label>
+                <input type="radio" required name="booking_time_end" value="20:45" id="booking_time_end-2045" class="booking-time-radio btn-check"><label for="booking_time_end-2045" class="btn btn-outline-primary">20:45</label>
+                <input type="radio" required name="booking_time_end" value="21:00" id="booking_time_end-2100" class="booking-time-radio btn-check"><label for="booking_time_end-2100" class="btn btn-outline-primary">21:00</label>
+                <input type="radio" required name="booking_time_end" value="21:15" id="booking_time_end-2115" class="booking-time-radio btn-check"><label for="booking_time_end-2115" class="btn btn-outline-primary">21:15</label>
+                <input type="radio" required name="booking_time_end" value="21:30" id="booking_time_end-2130" class="booking-time-radio btn-check"><label for="booking_time_end-2130" class="btn btn-outline-primary">21:30</label>
+                <input type="radio" required name="booking_time_end" value="21:45" id="booking_time_end-2145" class="booking-time-radio btn-check"><label for="booking_time_end-2145" class="btn btn-outline-primary">21:45</label>
+                <input type="radio" required name="booking_time_end" value="22:00" id="booking_time_end-2200" class="booking-time-radio btn-check"><label for="booking_time_end-2200" class="btn btn-outline-primary">22:00</label>
+                <input type="radio" required name="booking_time_end" value="22:15" id="booking_time_end-2215" class="booking-time-radio btn-check"><label for="booking_time_end-2215" class="btn btn-outline-primary">22:15</label>
+                <input type="radio" required name="booking_time_end" value="22:30" id="booking_time_end-2230" class="booking-time-radio btn-check"><label for="booking_time_end-2230" class="btn btn-outline-primary">22:30</label>
+                <input type="radio" required name="booking_time_end" value="22:45" id="booking_time_end-2245" class="booking-time-radio btn-check"><label for="booking_time_end-2245" class="btn btn-outline-primary">22:45</label>
+                <input type="radio" required name="booking_time_end" value="23:00" id="booking_time_end-2300" class="booking-time-radio btn-check"><label for="booking_time_end-2300" class="btn btn-outline-primary">23:00</label>
+                <input type="radio" required name="booking_time_end" value="23:15" id="booking_time_end-2315" class="booking-time-radio btn-check"><label for="booking_time_end-2315" class="btn btn-outline-primary">23:15</label>
+                <input type="radio" required name="booking_time_end" value="23:30" id="booking_time_end-2330" class="booking-time-radio btn-check"><label for="booking_time_end-2330" class="btn btn-outline-primary">23:30</label>
+                <input type="radio" required name="booking_time_end" value="23:45" id="booking_time_end-2345" class="booking-time-radio btn-check"><label for="booking_time_end-2345" class="btn btn-outline-primary">23:45</label>
+                <input type="radio" required name="booking_time_end" value="00:00" id="booking_time_end-0000" class="booking-time-radio btn-check"><label for="booking_time_end-0000" class="btn btn-outline-primary">00:00</label>
+              </div>
+              <button type="button" class="booking-time-scroll left" style="display: none;"><img src="./assets/icons/icon_chevron_left_circle_black.svg"></button>
+              <button type="button" class="booking-time-scroll right"><img src="./assets/icons/icon_chevron_right_circle_black.svg"></button>
+            </div>
+          </div>
+          <div class="row justify-content-end">
+            <div class="col-12 col-sm-6 col-lg-4">
+              <button type="button" class="form-navigate btn btn-primary w-100" data-page="3">下一步</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-page" data-page="3" style="display: none;">
+        <h2>選擇額外服務</h2>
+        <div class="booking-service-header">
+          <img src="./assets/images/service_header.jpg">
+          <div class="booking-service-header-text">
+            <div class="booking-service-header-number">01</div>
+            <div class="booking-service-header-name">食物及飲品</div>
+          </div>
+        </div>
+        <ul class="booking-service-grid">
+          <li class="booking-service-item" data-service-id="1">
+            <div>
+              <div class="booking-service-name">燒烤套餐</div>
+              <button type="button" class="booking-service-detail-button a">套餐詳細</button>
+            </div>
+            <div>
+              <div class="booking-service-price">$80 <span class="per">/ 每人</span></div>
+              <input type="checkbox" name="booking_service[1]" value="true" id="booking_service_1" class="btn-check">
+              <label for="booking_service_1" class="btn btn-outline-primary w-100">選擇</label>
+            </div>
+          </li>
+          <li class="booking-service-item" data-service-id="2">
+            <div>
+              <div class="booking-service-name">租燒烤爐費</div>
+              <span class="booking-service-remark">*如選用本公司燒烤套餐免租爐費</span>
+            </div>
+            <div>
+              <div class="booking-service-price">$500</div>
+              <input type="checkbox" name="booking_service[2]" value="true" id="booking_service_2" class="btn-check">
+              <label for="booking_service_2" class="btn btn-outline-primary w-100">選擇</label>
+            </div>
+          </li>
+          <li class="booking-service-item" data-service-id="3">
+            <div>
+              <div class="booking-service-name">火鍋套餐</div>
+              <button type="button" class="booking-service-detail-button a">套餐詳細</button>
+            </div>
+            <div>
+              <div class="booking-service-price">$218 <span class="per">/ 每人</span></div>
+              <input type="checkbox" name="booking_service[3]" value="true" id="booking_service_3" class="btn-check">
+              <label for="booking_service_3" class="btn btn-outline-primary w-100">選擇</label>
+            </div>
+          </li>
+          <li class="booking-service-item" data-service-id="4">
+            <div>
+              <div class="booking-service-name">水煙套餐</div>
+              <button type="button" class="booking-service-detail-button a">套餐詳細</button>
+            </div>
+            <div>
+              <div class="booking-service-price">$218 <span class="per">/ 每人</span></div>
+              <input type="checkbox" name="booking_service[4]" value="true" id="booking_service_4" class="btn-check">
+              <label for="booking_service_4" class="btn btn-outline-primary w-100">選擇</label>
+            </div>
+          </li>
+          <li class="booking-service-item" data-service-id="5">
+            <div>
+              <div class="booking-service-name">燒烤套餐</div>
+              <button type="button" class="booking-service-detail-button a">套餐詳細</button>
+            </div>
+            <div>
+              <div class="booking-service-price">$80 <span class="per">/ 每人</span></div>
+              <input type="checkbox" name="booking_service[5]" value="true" id="booking_service_5" class="btn-check">
+              <label for="booking_service_5" class="btn btn-outline-primary w-100">選擇</label>
+            </div>
+          </li>
+          <li class="booking-service-item" data-service-id="6">
+            <div>
+              <div class="booking-service-name">任添非酒精飲品</div>
+              <span class="booking-service-remark">*大小同價，2歲以上收費</span>
+            </div>
+            <div>
+              <div class="booking-service-price">$80 <span class="per">/ 每人</span></div>
+              <input type="checkbox" name="booking_service[6]" value="true" id="booking_service_6" class="btn-check">
+              <label for="booking_service_6" class="btn btn-outline-primary w-100">選擇</label>
+            </div>
+          </li>
+          <li class="booking-service-item" data-service-id="7">
+            <div>
+              <div class="booking-service-name">10人美食套餐</div>
+            </div>
+            <div>
+              <div class="booking-service-price">$1,088</div>
+              <button type="button" data-bs-toggle="modal" data-bs-target="#booking-service-customise-modal-7" class="booking-service-customise-button-unselected btn btn-outline-primary w-100">自訂</button>
+              <button type="button" data-bs-toggle="modal" data-bs-target="#booking-service-customise-modal-7" class="booking-service-customise-button-selected btn btn-primary w-100" style="display: none;">已選</button>
+            </div>
+          </li>
+          <li class="booking-service-item" data-service-id="8">
+            <div>
+              <div class="booking-service-name">16人美食套餐</div>
+            </div>
+            <div>
+              <div class="booking-service-price">$1,888</div>
+              <button type="button" data-bs-toggle="modal" data-bs-target="#booking-service-customise-modal-8" class="booking-service-customise-button-unselected btn btn-outline-primary w-100">自訂</button>
+              <button type="button" data-bs-toggle="modal" data-bs-target="#booking-service-customise-modal-8" class="booking-service-customise-button-selected btn btn-primary w-100" style="display: none;">已選</button>
+            </div>
+          </li>
+          <li class="booking-service-item" data-service-id="9">
+            <div>
+              <div class="booking-service-name">20人美食套餐</div>
+            </div>
+            <div>
+              <div class="booking-service-price">$2,388</div>
+              <button type="button" data-bs-toggle="modal" data-bs-target="#booking-service-customise-modal-9" class="booking-service-customise-button-unselected btn btn-outline-primary w-100">自訂</button>
+              <button type="button" data-bs-toggle="modal" data-bs-target="#booking-service-customise-modal-9" class="booking-service-customise-button-selected btn btn-primary w-100" style="display: none;">已選</button>
+            </div>
+          </li>
+          <li class="booking-service-item" data-service-id="10">
+            <div>
+              <div class="booking-service-name">自來酒水+開瓶費</div>
+              <span class="booking-service-remark">*一次性收費，只適用於中環店<br>如選用本店代訂酒水套餐可免收開瓶費</span>
+            </div>
+            <div>
+              <div class="booking-service-price">$500</div>
+              <input type="checkbox" name="booking_service[10]" value="true" id="booking_service_10" class="btn-check">
+              <label for="booking_service_10" class="btn btn-outline-primary w-100">選擇</label>
+            </div>
+          </li>
+        </ul>
+        <div class="container-fluid">
+          <div class="row justify-content-end">
+            <div class="col-12 col-sm-6 col-lg-4">
+              <button type="button" class="form-navigate btn btn-primary w-100" data-page="4">下一步</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-page" data-page="4" style="display: none;">
+        <h2>請輸入個人資料</h2>
+        <div class="container-fluid">
+          <div class="row">
+            <div class="form-floating col-12 col-lg-4 mb-4">
+              <input type="text" required placeholder="" name="lname" id="lname" class="validate-on-change form-control">
+              <label for="lname">姓氏</label>
+              <div class="validation-msg">請輸入姓氏</div>
+            </div>
+            <div class="form-floating col-12 col-lg-4 mb-4">
+              <input type="text" required placeholder="" name="fname" id="fname" class="validate-on-change form-control">
+              <label for="fname">名字</label>
+              <div class="validation-msg">請輸入名字</div>
+            </div>
+            <div class="form-floating col-12 col-lg-4 mb-4">
+              <select required name="title" id="title" class="validate-on-change form-select">
+                <option selected disabled value="">---</option>
+                <option value="Mr">先生</option>
+                <option value="Ms">小姐</option>
+                <option value="Mrs">女士</option>
+              </select>
+              <label for="title">稱謂</label>
+              <div class="validation-msg">請選擇稱謂</div>
+            </div>
+            <div class="form-floating col-12 col-lg-8 mb-4">
+              <input type="email" required placeholder="" name="email" id="email" class="validate-on-change form-control">
+              <label for="email">電郵地址</label>
+              <div class="validation-msg">請輸入正確電郵地址</div>
+            </div>
+            <div class="form-floating col-12 col-lg-4 mb-4">
+              <input type="tel" required placeholder="" name="phone" id="phone" class="validate-on-change form-control">
+              <label for="phone">電話號碼</label>
+              <div class="validation-msg">請輸入電話號碼</div>
+            </div>
+            <div class="col-12 mb-4">
+              <div class="form-check">
+                <input type="checkbox" name="ack" id="ack" class="validate-on-change form-check-input">
+                <label for="ack" class="form-check-label">我同意<a href="#" target="_blank">條款及細則</a></label>
+              <div class="validation-msg">請點選同意條款及細則</div>
+              </div>
+            </div>
+          </div>
+          <div class="row justify-content-end">
+            <div class="col-12 col-sm-6 col-lg-4">
+              <button type="button" class="form-navigate btn btn-primary w-100" data-page="5">下一步</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-page" data-page="5" style="display: none;">
+        <h2>選擇付款方式</h2>
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-12 col-sm-6 col-lg-4 mb-4">
+              <button type="button" class="btn btn-primary w-100">Stripe</button>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12 col-sm-6 col-lg-4 mb-4">
+              <input type="submit" value="Debug: submit form" class="btn btn-primary w-100">
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </form>
+
+  </main>
+
+  <aside>
+
+    <div id="aside-topbar">
+      <div class="account-actions">
+        <button type="button" class="a">登入</button>
+        <div class="vsep"></div>
+        <button type="button" class="a">註冊</button>
+      </div>
+    </div>
+
+    <div id="booking-detail">
+      <h1>預約詳情</h1>
+      <div class="booking-detail-item" data-show-after-page="1" data-item="booking_location_id" style="display: none;">
+        <div class="booking-detail-name">地點</div>
+        <button type="button" class="booking-detail-edit form-navigate a" data-page="1">修改</button>
+        <div class="booking-detail-content"></div>
+      </div>
+      <div class="booking-detail-item" data-show-after-page="2" data-item="booking_persons_and_time" style="display: none;">
+        <div class="booking-detail-name">人數及時間</div>
+        <button type="button" class="booking-detail-edit form-navigate a" data-page="2">修改</button>
+        <div class="booking-detail-content"></div>
+      </div>
+      <div class="booking-detail-item" data-show-after-page="3" data-item="booking_service" style="display: none;">
+        <div class="booking-detail-name">額外服務</div>
+        <button type="button" class="booking-detail-edit form-navigate a" data-page="3">修改</button>
+        <div class="booking-detail-content"></div>
+      </div>
+    </div>
+
+    <div id="aside-bottombar">
+      <img src="./assets/images/logo_white.svg" class="logo">
+    </div>
+
+  </aside>
+
+  <!-- Modals -->
+
+  <div class="modal fade" id="booking-service-customise-modal-7" tabindex="-1" aria-hidden="true" data-bs-backdrop="static">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title">10人美食套餐</h2>
+        </div>
+        <div class="modal-body">
+          <form action="javascript:void(0);" id="booking-service-customise-form-7" class="booking-service-customise-form" data-service-number="7">
+            <fieldset>
+              <legend>請點選套餐食物 (選2項)</legend>
+              <div class="form-check">
+                <input type="hidden" name="menu_item_id" value="1">
+                <input type="checkbox" name="menu_item_qty" value="1" id="menu_item_qty_7_1" class="form-check-input">
+                <label for="menu_item_qty_7_1" class="form-check-label">西京燒銀鱈魚併龍蝦</label>
+              </div>
+              <div class="form-check">
+                <input type="hidden" name="menu_item_id" value="2">
+                <input type="checkbox" name="menu_item_qty" value="1" id="menu_item_qty_7_2" class="form-check-input">
+                <label for="menu_item_qty_7_2" class="form-check-label">法式燒羊架併龍蝦</label>
+              </div>
+              <div class="form-check">
+                <input type="hidden" name="menu_item_id" value="3">
+                <input type="checkbox" name="menu_item_qty" value="1" id="menu_item_qty_7_3" class="form-check-input">
+                <label for="menu_item_qty_7_3" class="form-check-label">特厚豬肉眼扒併龍蝦</label>
+              </div>
+              <div class="form-check">
+                <input type="hidden" name="menu_item_id" value="4">
+                <input type="checkbox" name="menu_item_qty" value="1" id="menu_item_qty_7_4" class="form-check-input">
+                <label for="menu_item_qty_7_4" class="form-check-label">香草燒雞併龍蝦</label>
+              </div>
+            </fieldset>
+            <fieldset>
+              <legend>請點選套餐小食 (選4項)</legend>
+              <div>
+                <input type="hidden" name="menu_item_id" value="5">
+                <input type="number" value="0" min="0" max="4" step="1" name="menu_item_qty" id="menu_item_qty_7_5" class="form-control form-control-sm d-inline-block w-auto text-center">
+                <label for="menu_item_qty_7_5">香草田螺</label>
+              </div>
+              <div>
+                <input type="hidden" name="menu_item_id" value="6">
+                <input type="number" value="0" min="0" max="4" step="1" name="menu_item_qty" id="menu_item_qty_7_6" class="form-control form-control-sm d-inline-block w-auto text-center">
+                <label for="menu_item_qty_7_6">黑白半熟吞拿魚</label>
+              </div>
+              <div>
+                <input type="hidden" name="menu_item_id" value="7">
+                <input type="number" value="0" min="0" max="4" step="1" name="menu_item_qty" id="menu_item_qty_7_7" class="form-control form-control-sm d-inline-block w-auto text-center">
+                <label for="menu_item_qty_7_7">吉列炸蝦</label>
+              </div>
+              <div>
+                <input type="hidden" name="menu_item_id" value="8">
+                <input type="number" value="0" min="0" max="4" step="1" name="menu_item_qty" id="menu_item_qty_7_8" class="form-control form-control-sm d-inline-block w-auto text-center">
+                <label for="menu_item_qty_7_8">香草田螺</label>
+              </div>
+              <div>
+                <input type="hidden" name="menu_item_id" value="9">
+                <input type="number" value="0" min="0" max="4" step="1" name="menu_item_qty" id="menu_item_qty_7_9" class="form-control form-control-sm d-inline-block w-auto text-center">
+                <label for="menu_item_qty_7_9">黑白半熟吞拿魚</label>
+              </div>
+              <div>
+                <input type="hidden" name="menu_item_id" value="10">
+                <input type="number" value="0" min="0" max="4" step="1" name="menu_item_qty" id="menu_item_qty_7_10" class="form-control form-control-sm d-inline-block w-auto text-center">
+                <label for="menu_item_qty_7_10">吉列炸蝦</label>
+              </div>
+            </fieldset>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="booking-service-customise-remove-button btn btn-outline-primary" data-bs-dismiss="modal">取消</button>
+          <button type="button" class="booking-service-customise-confirm-button btn btn-primary" data-bs-dismiss="modal">儲存</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="booking-service-customise-modal-8" tabindex="-1" aria-hidden="true" data-bs-backdrop="static">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title">16人美食套餐</h2>
+        </div>
+        <div class="modal-body">
+          <form action="javascript:void(0);" id="booking-service-customise-form-8" class="booking-service-customise-form" data-service-number="8">
+            <fieldset>
+              <legend>請點選套餐食物 (選2項)</legend>
+              <div class="form-check">
+                <input type="hidden" name="menu_item_id" value="1">
+                <input type="checkbox" name="menu_item_qty" value="1" id="menu_item_qty_8_1" class="form-check-input">
+                <label for="menu_item_qty_8_1" class="form-check-label">西京燒銀鱈魚併龍蝦</label>
+              </div>
+              <div class="form-check">
+                <input type="hidden" name="menu_item_id" value="2">
+                <input type="checkbox" name="menu_item_qty" value="1" id="menu_item_qty_8_2" class="form-check-input">
+                <label for="menu_item_qty_8_2" class="form-check-label">法式燒羊架併龍蝦</label>
+              </div>
+              <div class="form-check">
+                <input type="hidden" name="menu_item_id" value="3">
+                <input type="checkbox" name="menu_item_qty" value="1" id="menu_item_qty_8_3" class="form-check-input">
+                <label for="menu_item_qty_8_3" class="form-check-label">特厚豬肉眼扒併龍蝦</label>
+              </div>
+              <div class="form-check">
+                <input type="hidden" name="menu_item_id" value="4">
+                <input type="checkbox" name="menu_item_qty" value="1" id="menu_item_qty_8_4" class="form-check-input">
+                <label for="menu_item_qty_8_4" class="form-check-label">香草燒雞併龍蝦</label>
+              </div>
+            </fieldset>
+            <fieldset>
+              <legend>請點選套餐小食 (選4項)</legend>
+              <div>
+                <input type="hidden" name="menu_item_id" value="5">
+                <input type="number" value="0" min="0" max="4" step="1" name="menu_item_qty" id="menu_item_qty_8_5" class="form-control form-control-sm d-inline-block w-auto text-center">
+                <label for="menu_item_qty_8_5">香草田螺</label>
+              </div>
+              <div>
+                <input type="hidden" name="menu_item_id" value="6">
+                <input type="number" value="0" min="0" max="4" step="1" name="menu_item_qty" id="menu_item_qty_8_6" class="form-control form-control-sm d-inline-block w-auto text-center">
+                <label for="menu_item_qty_8_6">黑白半熟吞拿魚</label>
+              </div>
+              <div>
+                <input type="hidden" name="menu_item_id" value="7">
+                <input type="number" value="0" min="0" max="4" step="1" name="menu_item_qty" id="menu_item_qty_8_7" class="form-control form-control-sm d-inline-block w-auto text-center">
+                <label for="menu_item_qty_8_7">吉列炸蝦</label>
+              </div>
+              <div>
+                <input type="hidden" name="menu_item_id" value="8">
+                <input type="number" value="0" min="0" max="4" step="1" name="menu_item_qty" id="menu_item_qty_8_8" class="form-control form-control-sm d-inline-block w-auto text-center">
+                <label for="menu_item_qty_8_8">香草田螺</label>
+              </div>
+              <div>
+                <input type="hidden" name="menu_item_id" value="9">
+                <input type="number" value="0" min="0" max="4" step="1" name="menu_item_qty" id="menu_item_qty_8_9" class="form-control form-control-sm d-inline-block w-auto text-center">
+                <label for="menu_item_qty_8_9">黑白半熟吞拿魚</label>
+              </div>
+              <div>
+                <input type="hidden" name="menu_item_id" value="10">
+                <input type="number" value="0" min="0" max="4" step="1" name="menu_item_qty" id="menu_item_qty_8_10" class="form-control form-control-sm d-inline-block w-auto text-center">
+                <label for="menu_item_qty_8_10">吉列炸蝦</label>
+              </div>
+            </fieldset>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="booking-service-customise-remove-button btn btn-outline-primary" data-bs-dismiss="modal">取消</button>
+          <button type="button" class="booking-service-customise-confirm-button btn btn-primary" data-bs-dismiss="modal">儲存</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="booking-service-customise-modal-9" tabindex="-1" aria-hidden="true" data-bs-backdrop="static">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title">20人美食套餐</h2>
+        </div>
+        <div class="modal-body">
+          <form action="javascript:void(0);" id="booking-service-customise-form-9" class="booking-service-customise-form" data-service-number="9">
+            <fieldset>
+              <legend>請點選套餐食物 (選2項)</legend>
+              <div class="form-check">
+                <input type="hidden" name="menu_item_id" value="1">
+                <input type="checkbox" name="menu_item_qty" value="1" id="menu_item_qty_9_1" class="form-check-input">
+                <label for="menu_item_qty_9_1" class="form-check-label">西京燒銀鱈魚併龍蝦</label>
+              </div>
+              <div class="form-check">
+                <input type="hidden" name="menu_item_id" value="2">
+                <input type="checkbox" name="menu_item_qty" value="1" id="menu_item_qty_9_2" class="form-check-input">
+                <label for="menu_item_qty_9_2" class="form-check-label">法式燒羊架併龍蝦</label>
+              </div>
+              <div class="form-check">
+                <input type="hidden" name="menu_item_id" value="3">
+                <input type="checkbox" name="menu_item_qty" value="1" id="menu_item_qty_9_3" class="form-check-input">
+                <label for="menu_item_qty_9_3" class="form-check-label">特厚豬肉眼扒併龍蝦</label>
+              </div>
+              <div class="form-check">
+                <input type="hidden" name="menu_item_id" value="4">
+                <input type="checkbox" name="menu_item_qty" value="1" id="menu_item_qty_9_4" class="form-check-input">
+                <label for="menu_item_qty_9_4" class="form-check-label">香草燒雞併龍蝦</label>
+              </div>
+            </fieldset>
+            <fieldset>
+              <legend>請點選套餐小食 (選4項)</legend>
+              <div>
+                <input type="hidden" name="menu_item_id" value="5">
+                <input type="number" value="0" min="0" max="4" step="1" name="menu_item_qty" id="menu_item_qty_9_5" class="form-control form-control-sm d-inline-block w-auto text-center">
+                <label for="menu_item_qty_9_5">香草田螺</label>
+              </div>
+              <div>
+                <input type="hidden" name="menu_item_id" value="6">
+                <input type="number" value="0" min="0" max="4" step="1" name="menu_item_qty" id="menu_item_qty_9_6" class="form-control form-control-sm d-inline-block w-auto text-center">
+                <label for="menu_item_qty_9_6">黑白半熟吞拿魚</label>
+              </div>
+              <div>
+                <input type="hidden" name="menu_item_id" value="7">
+                <input type="number" value="0" min="0" max="4" step="1" name="menu_item_qty" id="menu_item_qty_9_7" class="form-control form-control-sm d-inline-block w-auto text-center">
+                <label for="menu_item_qty_9_7">吉列炸蝦</label>
+              </div>
+              <div>
+                <input type="hidden" name="menu_item_id" value="8">
+                <input type="number" value="0" min="0" max="4" step="1" name="menu_item_qty" id="menu_item_qty_9_8" class="form-control form-control-sm d-inline-block w-auto text-center">
+                <label for="menu_item_qty_9_8">香草田螺</label>
+              </div>
+              <div>
+                <input type="hidden" name="menu_item_id" value="9">
+                <input type="number" value="0" min="0" max="4" step="1" name="menu_item_qty" id="menu_item_qty_9_9" class="form-control form-control-sm d-inline-block w-auto text-center">
+                <label for="menu_item_qty_9_9">黑白半熟吞拿魚</label>
+              </div>
+              <div>
+                <input type="hidden" name="menu_item_id" value="10">
+                <input type="number" value="0" min="0" max="4" step="1" name="menu_item_qty" id="menu_item_qty_9_10" class="form-control form-control-sm d-inline-block w-auto text-center">
+                <label for="menu_item_qty_9_10">吉列炸蝦</label>
+              </div>
+            </fieldset>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="booking-service-customise-remove-button btn btn-outline-primary" data-bs-dismiss="modal">取消</button>
+          <button type="button" class="booking-service-customise-confirm-button btn btn-primary" data-bs-dismiss="modal">儲存</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
