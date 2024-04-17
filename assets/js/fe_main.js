@@ -18,13 +18,44 @@ $(document).ready(function () {
     document.body.scrollTop = 0;
   });
 
+  // gallery: image lightbox controls
+
+  let navBlocked = false;
+
+  $("body").on("mousedown", ".slick-slide", function () {
+    navBlocked = false;
+    $(this).one("mousemove", function (ev) {
+      if (ev.buttons) {
+        navBlocked = true;
+      }
+      $("body").one("mouseup", function () {
+        setTimeout(() => {
+          navBlocked = false;
+        }, 1);
+      });
+    });
+  });
+
+  $("body").on("click", ".gallery-image", function () {
+    if (!navBlocked) {
+      BigPicture({
+        el: $(this).find("img")[0],
+        imgSrc: $(this).find("img").attr("src"),
+        gallery: document.querySelectorAll(".gallery-image > img"),
+        galleryAttribute: "src",
+      });
+    }
+  });
+
   // slick: initialise carousels
 
   const sliderOptions = {
     infinite: false,
     slidesToShow: 4,
-    swipeToSlide: true,
+    slidesToScroll: 4,
     arrows: false,
+    dots: true,
+    dotsClass: "slick-dots",
     responsive: [
       { breakpoint: 960, settings: { slidesToShow: 3 } },
       { breakpoint: 768, settings: { slidesToShow: 2 } },
@@ -37,9 +68,9 @@ $(document).ready(function () {
     rows: 3,
     slidesPerRow: 3,
     adaptiveHeight: true,
+    arrows: false,
     dots: true,
     dotsClass: "slick-paginate",
-    arrows: false,
     responsive: [
       { breakpoint: 960, settings: { slidesPerRow: 2 } },
       { breakpoint: 576, settings: { slidesPerRow: 1 } },
@@ -51,7 +82,7 @@ $(document).ready(function () {
 
   // function: slider filter
 
-  $(".slick-filter-button[data-for='slider']").on("click", function () {
+  $(`.slick-filter-button[data-for="slider"]`).on("click", function () {
     const slider = $(this).closest(".slick-wrapper").find(".slider-slick").first();
     slider.slick("slickUnfilter");
     if ($(this).hasClass("active")) {
@@ -60,7 +91,7 @@ $(document).ready(function () {
       const keyword = $(this).attr("data-filter-keyword");
       $(this).parent().children(".slick-filter-button").removeClass("active");
       $(this).addClass("active");
-      slider.slick("slickFilter", `[data-filter-keywords~=${keyword}]`);
+      slider.slick("slickFilter", `[data-filter-keywords~="${keyword}"]`);
     }
   });
 
