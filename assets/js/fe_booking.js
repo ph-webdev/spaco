@@ -78,6 +78,16 @@ $(document).ready(function () {
     naviagteForm(pageNumber);
   });
 
+  // back link navigates to previous page
+
+  $(".back-link").on("click", function (ev) {
+    const currentPage = parseInt($(".form-page").filter(":visible").eq(0).attr("data-page"));
+    if (currentPage !== 1) {
+      ev.preventDefault();
+      naviagteForm(currentPage - 1);
+    }
+  });
+
   // booking period and time scrolling
 
   function scrollTime(containerJQO, targetOffset) {

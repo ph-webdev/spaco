@@ -326,8 +326,8 @@
         <ul class="booking-service-grid">
           <li class="booking-service-item" data-service-id="1">
             <div>
-              <div class="booking-service-name">燒烤套餐</div>
-              <button type="button" class="booking-service-detail-button a">套餐詳細</button>
+              <div class="booking-service-name">經典燒烤套餐</div>
+              <button type="button" data-bs-toggle="modal" data-bs-target="#booking-service-detail-modal-1" class="booking-service-detail-button a">套餐詳細</button>
             </div>
             <div>
               <div class="booking-service-price">$80 <span class="per">/ 每人</span></div>
@@ -337,30 +337,30 @@
           </li>
           <li class="booking-service-item" data-service-id="2">
             <div>
-              <div class="booking-service-name">租燒烤爐費</div>
-              <span class="booking-service-remark">*如選用本公司燒烤套餐免租爐費</span>
+              <div class="booking-service-name">海鮮燒烤套餐</div>
+              <button type="button" data-bs-toggle="modal" data-bs-target="#booking-service-detail-modal-2" class="booking-service-detail-button a">套餐詳細</button>
             </div>
             <div>
-              <div class="booking-service-price">$500</div>
+              <div class="booking-service-price">$80 <span class="per">/ 每人</span></div>
               <input type="checkbox" name="booking_service[2]" value="true" id="booking_service_2" class="btn-check">
               <label for="booking_service_2" class="btn btn-outline-primary w-100">選擇</label>
             </div>
           </li>
           <li class="booking-service-item" data-service-id="3">
             <div>
-              <div class="booking-service-name">火鍋套餐</div>
-              <button type="button" class="booking-service-detail-button a">套餐詳細</button>
+              <div class="booking-service-name">租燒烤爐費</div>
+              <span class="booking-service-remark">*如選用本公司燒烤套餐免租爐費</span>
             </div>
             <div>
-              <div class="booking-service-price">$218 <span class="per">/ 每人</span></div>
+              <div class="booking-service-price">$500</div>
               <input type="checkbox" name="booking_service[3]" value="true" id="booking_service_3" class="btn-check">
               <label for="booking_service_3" class="btn btn-outline-primary w-100">選擇</label>
             </div>
           </li>
           <li class="booking-service-item" data-service-id="4">
             <div>
-              <div class="booking-service-name">水煙套餐</div>
-              <button type="button" class="booking-service-detail-button a">套餐詳細</button>
+              <div class="booking-service-name">火鍋套餐</div>
+              <button type="button" data-bs-toggle="modal" data-bs-target="#booking-service-detail-modal-4" class="booking-service-detail-button a">套餐詳細</button>
             </div>
             <div>
               <div class="booking-service-price">$218 <span class="per">/ 每人</span></div>
@@ -370,11 +370,11 @@
           </li>
           <li class="booking-service-item" data-service-id="5">
             <div>
-              <div class="booking-service-name">燒烤套餐</div>
-              <button type="button" class="booking-service-detail-button a">套餐詳細</button>
+              <div class="booking-service-name">水煙套餐</div>
+              <button type="button" data-bs-toggle="modal" data-bs-target="#booking-service-detail-modal-5" class="booking-service-detail-button a">套餐詳細</button>
             </div>
             <div>
-              <div class="booking-service-price">$80 <span class="per">/ 每人</span></div>
+              <div class="booking-service-price">$218 <span class="per">/ 每人</span></div>
               <input type="checkbox" name="booking_service[5]" value="true" id="booking_service_5" class="btn-check">
               <label for="booking_service_5" class="btn btn-outline-primary w-100">選擇</label>
             </div>
@@ -392,7 +392,7 @@
           </li>
           <li class="booking-service-item" data-service-id="7">
             <div>
-              <div class="booking-service-name">10人美食套餐</div>
+              <div class="booking-service-name">10人到會美食</div>
             </div>
             <div>
               <div class="booking-service-price">$1,088</div>
@@ -402,7 +402,7 @@
           </li>
           <li class="booking-service-item" data-service-id="8">
             <div>
-              <div class="booking-service-name">16人美食套餐</div>
+              <div class="booking-service-name">16人到會美食</div>
             </div>
             <div>
               <div class="booking-service-price">$1,888</div>
@@ -412,7 +412,7 @@
           </li>
           <li class="booking-service-item" data-service-id="9">
             <div>
-              <div class="booking-service-name">20人美食套餐</div>
+              <div class="booking-service-name">20人到會美食</div>
             </div>
             <div>
               <div class="booking-service-price">$2,388</div>
@@ -478,7 +478,7 @@
             <div class="col-12 mb-4">
               <div class="form-check">
                 <input type="checkbox" name="ack" id="ack" class="validate-on-change form-check-input">
-                <label for="ack" class="form-check-label">我同意<a href="#" target="_blank">條款及細則</a></label>
+                <label for="ack" class="form-check-label">我同意<a href="faq.html" target="_blank">條款及細則</a></label>
               <div class="validation-msg">請點選同意條款及細則</div>
               </div>
             </div>
@@ -548,11 +548,78 @@
 
   <!-- Modals -->
 
+  <div class="modal fade" id="booking-service-detail-modal-1" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title">經典燒烤套餐</h2>
+        </div>
+        <div class="modal-body">
+          <p>經典燒烤套餐</p>
+          <p>- 豬扒</p>
+          <p>- 雞翼</p>
+          <p>- 各款蔬菜</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-primary" data-bs-dismiss="modal">關閉</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="booking-service-detail-modal-2" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title">海鮮燒烤套餐</h2>
+        </div>
+        <div class="modal-body">
+          <p>魚、青口、帶子</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-primary" data-bs-dismiss="modal">關閉</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="booking-service-detail-modal-4" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title">火鍋套餐</h2>
+        </div>
+        <div class="modal-body">
+          <p>火鍋</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-primary" data-bs-dismiss="modal">關閉</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="booking-service-detail-modal-5" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title">水煙套餐</h2>
+        </div>
+        <div class="modal-body">
+          <p>水煙</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-primary" data-bs-dismiss="modal">關閉</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <div class="modal fade" id="booking-service-customise-modal-7" tabindex="-1" aria-hidden="true" data-bs-backdrop="static">
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
         <div class="modal-header">
-          <h2 class="modal-title">10人美食套餐</h2>
+          <h2 class="modal-title">10人到會美食</h2>
         </div>
         <div class="modal-body">
           <form action="javascript:void(0);" id="booking-service-customise-form-7" class="booking-service-customise-form" data-service-number="7">
@@ -626,7 +693,7 @@
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
         <div class="modal-header">
-          <h2 class="modal-title">16人美食套餐</h2>
+          <h2 class="modal-title">16人到會美食</h2>
         </div>
         <div class="modal-body">
           <form action="javascript:void(0);" id="booking-service-customise-form-8" class="booking-service-customise-form" data-service-number="8">
@@ -700,7 +767,7 @@
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
         <div class="modal-header">
-          <h2 class="modal-title">20人美食套餐</h2>
+          <h2 class="modal-title">20人到會美食</h2>
         </div>
         <div class="modal-body">
           <form action="javascript:void(0);" id="booking-service-customise-form-9" class="booking-service-customise-form" data-service-number="9">
